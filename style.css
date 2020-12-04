@@ -16,7 +16,7 @@
 
 ::placeholder {
     text-align: center;
-    color: white;
+    color: rgba(255,255,255,0.8);
     font-family: 'DoHyeon';
 }
 input{
@@ -86,11 +86,11 @@ div.search-bar-coordinates {
     border: 1px solid black;
 }
 
-/*
-div.search-box:hover {
+
+div.search-bar-city:hover, div.search-bar-coordinates:hover {
     transition: box-shadow 0.5s;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}*/
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
 
 div.search-bar-city input.search-box {
     font-size: 20px;
@@ -126,11 +126,17 @@ div.search-bar-coordinates input.search-box {
     cursor: pointer;
     font-family: 'DoHyeon';
 }
-
+/* effetto mouse hover */
 button:hover,
 .button:hover {
     transition: opacity 0.7s;
-    opacity: 0.7;
+    opacity: 0.5;
+}
+/* effetto mouse out hover */
+button,
+.button {
+    transition: opacity 0.7s;
+    opacity: 1;
 }
 
 .weather-grid-container {
