@@ -98,9 +98,8 @@ button,
     font-family: 'Rubik';
     cursor: pointer;
 }
-/*
 button:hover,
 .button:hover {
-    transition: opacity 0.5s;
-    opacity: 0.8;
-}*/
+    transition: opacity 0.7s;
+    opacity: 0.7;
+}
