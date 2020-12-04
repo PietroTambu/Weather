@@ -104,13 +104,30 @@ button:hover,
     opacity: 0.7;
 }
 
-.main {
+.weather-grid-container {
     display: flex;
+    justify-content: center;
 }
 
-.main-item {
-    background-color: #98bbe4;
-    height: auto;
-    margin: 1px;
+.weather-grid {
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.weather-grid-item {
     border: 1px solid black;
+    min-width: 220px;
+    height: auto;
+    flex-wrap: wrap;
+    background-color: #98bbe5;
+    border-radius: 15px;
+    margin: 1px;
+}
+
+.cityname-item{
+    min-width: 350px;
 }
