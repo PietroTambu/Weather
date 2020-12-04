@@ -1,5 +1,5 @@
 function getWeather(){
-    $('.weatherResponse').html('');
+    //$('.weatherResponse').html('');
     var cityName = $('#cityName').val();
     var lat = $('#lat').val();
     var lon = $('#lon').val();
@@ -32,11 +32,11 @@ function getWeather(){
         var wind_speed = weatherData.wind.speed;
         var clouds = weatherData.clouds.all;
 
-
-
         $('.weatherResponse').append("The weather in " + cityName + " " + country + " is currently " + description);
         $('.weatherResponse').append("The temperature is: " + temperature + " K");
         
+        
+       
     }
 
 
