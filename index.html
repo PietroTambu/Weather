@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="header">
-            <h1>The Weather</h1>
+            <h1>THE WEATHER</h1>
         </div>
     </header>
 
@@ -19,7 +19,7 @@
         <table style="width: 100%">
             <tr>
                 <td align='left'>
-                    <input onfocus="nome()" autocomplete="off" type="text" id="cityName" name="city" class="search-box" placeholder="Inserisci una città" title="Compila questo campo." style="border: 2px solid #bebebe; border-radius: 4px; background-color: #fff;">
+                    <input onfocus="nome()" autocomplete="off" type="text" id="cityName" name="city" class="search-box" placeholder="Inserisci una città" title="Compila questo campo." style=" border: 1px solid  rgba(255, 255, 255, 0.5);; border-radius: 4px; background-color: rgba(255, 255, 255, 0);">
                 </td>
                 <td>
                     <button onclick="check('byName')" id="button-byName" class="button">Search</button>
@@ -32,10 +32,10 @@
         <table style="width: 100%">
             <tr>
                 <td align='left'>
-                    <input onfocus="coordinates()" type="text" id="lat" name="latitude" class="search-box" placeholder="Latitude" title="Compila questo campo." style="border: 2px solid #bebebe; border-radius: 4px; background-color: #fff;">
+                    <input onfocus="coordinates()" type="text" id="lat" name="latitude" class="search-box" placeholder="Latitude" title="Compila questo campo." style="border: 2px solid  rgba(255, 255, 255, 0.5);; border-radius: 4px; background-color: rgba(255, 255, 255, 0);">
                 </td>
                 <td align='left'>
-                    <input onfocus="coordinates()" type="text" id="lon" name="longitude" class="search-box" placeholder="Longitude" title="Compila questo campo." style="border: 2px solid #bebebe; border-radius: 4px; background-color: #fff;">
+                    <input onfocus="coordinates()" type="text" id="lon" name="longitude" class="search-box" placeholder="Longitude" title="Compila questo campo." style="border: 2px solid rgba(255, 255, 255, 0.5);; border-radius: 4px; background-color: rgba(255, 255, 255, 0);">
                 </td>
                 <td>
                     <button onclick="check('coordinates')" id="button-coord" class="button">Search</button>
@@ -46,10 +46,10 @@
     <div class='weather-grid-container' style="font-size: 25px;">
         <div class='weather-grid'>
             <div class='weather-grid-item cityname-item' >
-                <p class="city">City</p>
+                <p class="city">City:</p>
             </div>
             <div class='weather-grid-item cityname-item'>
-                <p class="description">Weather</p>
+                <p class="description">Weather:</p>
             </div>
         </div>
     </div>
