@@ -4,8 +4,6 @@
 }
 
 ::placeholder {
-    color: black;
-    opacity: 1;
     text-align: center;
 }
 
@@ -65,7 +63,9 @@ div.search-bar-coordinates {
     box-shadow: none;
     padding: 7px;
 }
-
+.search-box{
+    text-align: center;
+}
 /*
 div.search-bar:hover {
     transition: box-shadow 0.5s;
