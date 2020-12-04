@@ -18,7 +18,7 @@ function getWeather(use){
         var apiCall = 'http://api.openweathermap.org/data/2.5/weather?lat='+ lat +'&lon='+ lon +'&appid=84fa0ddce2495b1f04851902133c2e3b';
     }
 
-    $.getJSON(apiCall, weatherCallback);
+    $.getJSON(apiCall, weatherCallback).fail( function() { alert("error");});
 
     function weatherCallback(weatherData){
 
@@ -43,7 +43,7 @@ function getWeather(use){
             $('.'+info[i]).html('');
         }
 
-        $('.city').append(cityName + " " + country);
+        $('.city').append("City: " + cityName + " " + country);
         $('.description').append(description);
         $('.description').css('textTransform', 'capitalize');
         $('.temperature').append("Temperature: " + temperature + " °C");
