@@ -64,9 +64,7 @@ function getWeather(use){
         $('.pressure').append("Pressure: " + pressure + " hPa");
         $('.humidity').append("Humidity " + humidity + " %");
         $('.windSpeed').append("Wind Speed: " + wind_speed + " m/s");
-        $('.clouds').append("Clouds: " + clouds + " %");
-
-        
+        $('.clouds').append("Clouds: " + clouds + " %"); 
 
     }
 }
