@@ -62,7 +62,7 @@ function getWeather(use){
         $('.temperatureMax').append("T. Max: " + temperature_max + " °C");
         $('.temperatureMin').append("T. Min: " + temperature_min + " °C");
         $('.pressure').append("Pressure: " + pressure + " hPa");
-        $('.humidity').append("Humidity " + humidity + " %");
+        $('.humidity').append("Humidity: " + humidity + " %");
         $('.windSpeed').append("Wind Speed: " + wind_speed + " m/s");
         $('.clouds').append("Clouds: " + clouds + " %"); 
 
