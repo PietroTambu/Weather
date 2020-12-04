@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+::placeholder {
+    color: black;
+    opacity: 1;
+    text-align: center;
+}
+
 .header {
     background-image: url("images/background.svg");
     text-align:center;
@@ -86,7 +92,7 @@ div.search-bar-coordinates input.search-box {
     font-family: 'Rubik';
 }
 
-button,
+
 .button {
     margin: 0;
     border-radius: 10px;
@@ -107,6 +113,7 @@ button:hover,
 .weather-grid-container {
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 
 .weather-grid {
