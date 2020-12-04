@@ -9,9 +9,9 @@ function getWeather(use){
         alert("Inserire le coordinate mancanti");
     }else{
         if(cityName !== ""){
-        var apiCall = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=84fa0ddce2495b1f04851902133c2e3b';
+            var apiCall = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=84fa0ddce2495b1f04851902133c2e3b';
         }else{
-        var apiCall = 'http://api.openweathermap.org/data/2.5/weather?lat='+ lat +'&lon='+ lon +'&appid=84fa0ddce2495b1f04851902133c2e3b';
+            var apiCall = 'http://api.openweathermap.org/data/2.5/weather?lat='+ lat +'&lon='+ lon +'&appid=84fa0ddce2495b1f04851902133c2e3b';
         }
         $.getJSON(apiCall, weatherCallback).fail( function() { alert("error");});
     }
@@ -81,27 +81,25 @@ function nome(){
     lon.prop("disabled", true);
 
     $('#button-coord').html('use');
-    lat.attr("placeholder", "latitude");
-    lon.attr("placeholder", "longitude");
     lat.fadeTo("slow", 0.7);
     lon.fadeTo("slow", 0.7);
     cityName.fadeTo("slow", 1);
+    $('#SearchBarCity').css("box-shadow", "0 0 7px #ffffffab");
+    $('#SearchBarCoordinates').css("box-shadow", "none");
 }
 
 function coordinates(){
     var cityName = $('#cityName');
     var lat = $('#lat');
     var lon = $('#lon');
-
     cityName.val("");
-
     cityName.prop("disabled", true);
-
     $('#button-byName').html('use');
-    cityName.attr("placeholder", "city name");
     cityName.fadeTo("slow", 0.7);
     lat.fadeTo("slow", 1);
     lon.fadeTo("slow", 1);
+    $('#SearchBarCoordinates').css("box-shadow", "0 0 7px #ffffffab");
+    $('#SearchBarCity').css("box-shadow", "none");
 }
 
 function check(use){
@@ -132,6 +130,8 @@ function check(use){
         lat.fadeTo("slow", 0.7);
         lon.fadeTo("slow", 0.7);
         cityName.fadeTo("slow", 1);
+        $('#SearchBarCoordinates').css("box-shadow", "none");
+        $('#SearchBarCity').css("box-shadow", "0 0 7px #ffffffab");
 
     }else if (use === "coordinates" && lat.prop("disabled") === true){
         // cambiare da byName a coords
@@ -152,5 +152,7 @@ function check(use){
         lat.fadeTo("slow", 1);
         lon.fadeTo("slow", 1);
         cityName.fadeTo("slow", 0.7);
+        $('#SearchBarCoordinates').css("box-shadow", "0 0 7px #ffffffab");
+        $('#SearchBarCity').css("box-shadow", "none");
     }
 }
