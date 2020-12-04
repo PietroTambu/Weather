@@ -19,10 +19,10 @@
         <table style="width: 100%">
             <tr>
                 <td align='left'>
-                    <input autocomplete="off" type="text" id="cityName" name="city" class="search-box" placeholder="Inserisci una città" title="Compila questo campo.">
+                    <input onfocus="nome()" autocomplete="off" type="text" id="cityName" name="city" class="search-box" placeholder="Inserisci una città" title="Compila questo campo.">
                 </td>
                 <td>
-                    <button onclick="getWeather()" class="button">Search</button>
+                    <button onclick="getWeather()" id="button-byName" class="button">Search</button>
                 </td>
             </tr>
         </table>
@@ -32,40 +32,56 @@
         <table style="width: 100%">
             <tr>
                 <td align='left'>
-                    <input type="text" id="lat" name="latitude" class="search-box" placeholder="Latitude" title="Compila questo campo.">
+                    <input onclick="coordinates()" type="text" id="lat" name="latitude" class="search-box" placeholder="Latitude" title="Compila questo campo.">
                 </td>
                 <td align='left'>
-                    <input type="text" id="lon" name="longitude" class="search-box" placeholder="Longitude" title="Compila questo campo.">
+                    <input onclick="coordinates()" type="text" id="lon" name="longitude" class="search-box" placeholder="Longitude" title="Compila questo campo.">
                 </td>
                 <td>
-                    <button onclick="getWeather()" class="button">Search</button>
+                    <button onclick="getWeather()" id="button-coord" class="button">Search</button>
                 </td>
             </tr>
         </table>
     </div>
-    <div class='weather-grid-container'>
+    <div class='weather-grid-container' style="font-size: 25px;">
         <div class='weather-grid'>
-            <div class='weather-grid-item cityname-item'>
-                <p>testo a piacere.</p>
+            <div class='weather-grid-item cityname-item' >
+                <p class="city">City</p>
             </div>
             <div class='weather-grid-item cityname-item'>
-                <p>testo a piacere.</p>
+                <p class="description">Weather</p>
             </div>
         </div>
     </div>
-    <div class='weather-grid-container'>
+    <div class='weather-grid-container'  style="font-size: 20px;">
         <div class='weather-grid'>
             <div class='weather-grid-item'>
-                <p>testo a piacere.</p>
+                <p class="temperature">Temperature: - °C</p>
             </div>
             <div class='weather-grid-item'>
-                <p>testo a piacere.</p>
+                <p class="perceived">T. Perceived: - °C</p>
             </div>
             <div class='weather-grid-item'>
-                <p>testo a piacere.</p>
+                <p class="temperatureMax">T. Max: - °C</p>
             </div>
             <div class='weather-grid-item'>
-                <p>testo a piacere.</p>
+                <p class="temperatureMin">T. Min: - °C</p>
+            </div>
+        </div>
+    </div>
+    <div class='weather-grid-container'  style="font-size: 20px;">
+        <div class='weather-grid'>
+            <div class='weather-grid-item'>
+                <p class="pressure">Pressure: - hPa </p>
+            </div>
+            <div class='weather-grid-item'>
+                <p class="humidity">Humidity: - %</p>
+            </div>
+            <div class='weather-grid-item'>
+                <p class="windSpeed">Wind speed: - m/s</p>
+            </div>
+            <div class='weather-grid-item'>
+                <p class="clouds">Clouds: - %</p>
             </div>
         </div>
     </div>
