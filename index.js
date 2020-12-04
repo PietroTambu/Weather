@@ -72,6 +72,7 @@ function getWeather(use){
 function nome(){
     var lat = $('#lat');
     var lon = $('#lon');
+    var cityName = $('#cityName');
 
     lat.val("");
     lon.val("");
@@ -79,20 +80,28 @@ function nome(){
     lat.prop("disabled", true);
     lon.prop("disabled", true);
 
-    $('#button-coord').html('use me');
-    lat.attr("placeholder", "---lat---");
-    lon.attr("placeholder", "---lon---");
+    $('#button-coord').html('use');
+    lat.attr("placeholder", "latitude");
+    lon.attr("placeholder", "longitude");
+    lat.fadeTo("slow", 0.7);
+    lon.fadeTo("slow", 0.7);
+    cityName.fadeTo("slow", 1);
 }
 
 function coordinates(){
-    var name = $('#cityName');
+    var cityName = $('#cityName');
+    var lat = $('#lat');
+    var lon = $('#lon');
 
-    name.val("");
+    cityName.val("");
 
-    name.prop("disabled", true);
+    cityName.prop("disabled", true);
 
-    $('#button-byName').html('use me');
-    name.attr("placeholder", "---city-name---");
+    $('#button-byName').html('use');
+    cityName.attr("placeholder", "city name");
+    cityName.fadeTo("slow", 0.7);
+    lat.fadeTo("slow", 1);
+    lon.fadeTo("slow", 1);
 }
 
 function check(use){
@@ -100,12 +109,13 @@ function check(use){
     var lat = $('#lat');
     var lon = $('#lon');
     var cityName = $('#cityName');
+
     if(use === "byName" && cityName.prop("disabled") === false){
         getWeather(use);
     }else if (use === "coordinates" && lat.prop("disabled") === false){
         getWeather(use);
     }else if (use === "byName" && cityName.prop("disabled") === true){
-        // cambiare to use byname mettere globali cityname lat lon
+        // cambiare da coords a byName
         lat.val("");
         lon.val("");
         cityName.val("");
@@ -114,14 +124,17 @@ function check(use){
         lon.prop("disabled", true);
         cityName.prop("disabled", false);
 
-        $('#button-coord').html('use me');
+        $('#button-coord').html('use');
         $('#button-byName').html('Search');
-        lat.attr("placeholder", "---lat---");
-        lon.attr("placeholder", "---lon---");
-        cityName.attr("placeholder", "Inserisci una cittá");
+        lat.attr("placeholder", "latitude");
+        lon.attr("placeholder", "longitude");
+        cityName.attr("placeholder", "Insert name of city");
+        lat.fadeTo("slow", 0.7);
+        lon.fadeTo("slow", 0.7);
+        cityName.fadeTo("slow", 1);
 
     }else if (use === "coordinates" && lat.prop("disabled") === true){
-
+        // cambiare da byName a coords
         lat.prop("disabled", false);
         lon.prop("disabled", false);
         cityName.prop("disabled", true);
@@ -132,9 +145,12 @@ function check(use){
 
     
         $('#button-coord').html('Search');
-        $('#button-byName').html('Use me');
-        cityName.attr("placeholder", "---city-name---");
-        lat.attr("placeholder", "Latitude");
-        lon.attr("placeholder", "Longitude");
+        $('#button-byName').html('use');
+        cityName.attr("placeholder", "city name");
+        lat.attr("placeholder", "latitude");
+        lon.attr("placeholder", "longitude");
+        lat.fadeTo("slow", 1);
+        lon.fadeTo("slow", 1);
+        cityName.fadeTo("slow", 0.7);
     }
 }
