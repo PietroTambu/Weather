@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wheater</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1>The Wheater</h1>
+        </div>
+    </header>
+
+    <div class="search-bar-city">
+        <table style="width: 100%">
+            <tr>
+                <td align='left'>
+                    <input autocomplete="off" type="text" id="cityName" name="city" class="search-box" placeholder="Inserisci una città" title="Compila questo campo.">
+                </td>
+                <td>
+                    <button onclick="getWeather()" class="button">Search</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="search-bar-coordinates">
+        <table style="width: 100%">
+            <tr>
+                <td align='left'>
+                    <input type="text" id="lat" name="latitude" class="search-box" placeholder="Latitude" title="Compila questo campo.">
+                </td>
+                <td align='left'>
+                    <input type="text" id="lon" name="longitude" class="search-box" placeholder="Longitude" title="Compila questo campo.">
+                </td>
+                <td>
+                    <button onclick="getWeather()" class="button">Search</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="main">
+        <div class="weatherResponse">
+
+        </div>
+    </div>
+</body>
+</html>

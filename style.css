@@ -1,0 +1,106 @@
+* {
+    margin: 10px;
+    padding: 0;
+}
+
+.header {
+    background-image: url("images/background.svg");
+    text-align:center;
+    border: 2px solid black;
+    font-size: xx-large;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    max-width: 900px;
+    margin:auto;
+}
+
+.main {
+    background-color: #2272b5;
+    height: 1000px;
+    width: 900px;
+    border: 2px solid #000000;
+    margin:auto;
+    text-align: center;
+}
+
+table,
+tbody,
+tr,
+td {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #000000;
+}
+
+div.search-bar-city {
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px auto;
+    padding: 0;
+    width: 400px;
+    background-color: #FFF;
+    border: 2px solid #e3e3e3;
+    cursor: pointer;
+    transition: box-shadow 0.5s;
+    box-shadow: none;
+    padding: 7px;
+}
+
+div.search-bar-coordinates {
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px auto;
+    padding: 0;
+    width: 400px;
+    background-color: #FFF;
+    border: 2px solid #e3e3e3;
+    cursor: pointer;
+    transition: box-shadow 0.5s;
+    box-shadow: none;
+    padding: 7px;
+}
+
+/*
+div.search-bar:hover {
+    transition: box-shadow 0.5s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}*/
+
+div.search-bar-city input.search-box {
+    font-size: 20px;
+    width: 275px;
+    padding: 5px;
+    border: none;
+    margin-left: 2px;
+    border-radius: 10px;
+    font-family: 'Rubik';
+}
+
+div.search-bar-coordinates input.search-box {
+    font-size: 20px;
+    width: 125px;
+    padding: 5px;
+    border: none;
+    margin-left: 2px;
+    border-radius: 10px;
+    font-family: 'Rubik';
+}
+
+button,
+.button {
+    margin: 0;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    background-color: #e3e3e3;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    min-width: 65px;
+    font-family: 'Rubik';
+    cursor: pointer;
+}
+/*
+button:hover,
+.button:hover {
+    transition: opacity 0.5s;
+    opacity: 0.8;
+}*/

@@ -1,2 +1,2 @@
 # Weather
-Weather API 
+wheater API
