@@ -19,7 +19,7 @@
         <table style="width: 100%">
             <tr>
                 <td align='left'>
-                    <input onfocus="nome()" autocomplete="off" type="text" id="cityName" name="city" class="search-box" placeholder="Insert name of city" title="required field (City Name)" style=" border: 1px solid  rgba(255, 255, 255, 0.5);; border-radius: 4px; background-color: rgba(255, 255, 255, 0);">
+                    <input onfocus="nome()" autocomplete="off" type="text" id="cityName" name="city" class="search-box" placeholder="Insert name of city" title="required field (City Name)" style="border: 2px solid rgba(255, 255, 255, 0.5); border-radius: 10px; background-color: rgba(255, 255, 255, 0); text-align: center">
                 </td>
                 <td>
                     <button onclick="check('byName')" id="button-byName" class="button">Search</button>
@@ -32,10 +32,10 @@
         <table style="width: 100%">
             <tr>
                 <td align='left'>
-                    <input onfocus="coordinates()" type="text" id="lat" name="latitude" class="search-box" placeholder="Latitude" title="required field (Latitude)" style="border: 2px solid  rgba(255, 255, 255, 0.5);; border-radius: 4px; background-color: rgba(255, 255, 255, 0);">
+                    <input onfocus="coordinates()" type="text" id="lat" name="latitude" class="search-box" placeholder="latitude" title="required field (Latitude)" style="border: 2px solid rgba(255, 255, 255, 0.5); border-radius: 10px; background-color: rgba(255, 255, 255, 0); text-align: center">
                 </td>
                 <td align='left'>
-                    <input onfocus="coordinates()" type="text" id="lon" name="longitude" class="search-box" placeholder="Longitude" title="required field (Longitude)" style="border: 2px solid rgba(255, 255, 255, 0.5);; border-radius: 4px; background-color: rgba(255, 255, 255, 0);">
+                    <input onfocus="coordinates()" type="text" id="lon" name="longitude" class="search-box" placeholder="longitude" title="required field (Longitude)" style="border: 2px solid rgba(255, 255, 255, 0.5); border-radius: 10px; background-color: rgba(255, 255, 255, 0); text-align: center">
                 </td>
                 <td>
                     <button onclick="check('coordinates')" id="button-coord" class="button">Search</button>
@@ -45,10 +45,10 @@
     </div>
     <div class='weather-grid-container' style="font-size: 25px;">
         <div class='weather-grid'>
-            <div class='weather-grid-item cityname-item' >
+            <div class='weather-grid-item cityname-item' title="City name + Contry">
                 <p class="city">City:</p>
             </div>
-            <div class='weather-grid-item cityname-item'>
+            <div class='weather-grid-item cityname-item' title="Current weather">
                 <p class="description">Weather:</p>
             </div>
         </div>
