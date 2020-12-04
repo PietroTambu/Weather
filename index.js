@@ -4,21 +4,19 @@ function getWeather(use){
     var lon = $('#lon').val();
     
     if(use === "byName" && cityName === ""){
-        alert("inserisci una cittá");
+        alert("inserire una cittá");
     }else if(use === "coordinates" && (lat === "" || lon === "")){
-        alert("Inserisci le coordinate mancanti");
-    }
-
-    
-    //identificazione se ricerca tramite coordinate o nome cittá.
-    
-    if(cityName !== ""){
-        var apiCall = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=84fa0ddce2495b1f04851902133c2e3b';
+        alert("Inserire le coordinate mancanti");
     }else{
+        if(cityName !== ""){
+        var apiCall = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=84fa0ddce2495b1f04851902133c2e3b';
+        }else{
         var apiCall = 'http://api.openweathermap.org/data/2.5/weather?lat='+ lat +'&lon='+ lon +'&appid=84fa0ddce2495b1f04851902133c2e3b';
+        }
+        $.getJSON(apiCall, weatherCallback).fail( function() { alert("error");});
     }
-
-    $.getJSON(apiCall, weatherCallback).fail( function() { alert("error");});
+    
+    
 
     function weatherCallback(weatherData){
 
@@ -26,6 +24,8 @@ function getWeather(use){
         var country = weatherData.sys.country;
         //var main = weatherData.weather[0].main;
         var description = weatherData.weather[0].description;
+        var lat = weatherData.coord.lat;
+        var lon = weatherData.coord.lon;
 
         var temperature = Math.round((weatherData.main.temp - 273.15) * 100) / 100;
         var temperature_min = Math.round((weatherData.main.temp_min - 273.15) * 100) / 100;
@@ -43,7 +43,18 @@ function getWeather(use){
             $('.'+info[i]).html('');
         }
 
-        $('.city').append("City: " + cityName + " " + country);
+        if(use === "byName"){
+            $('#lat').attr("placeholder", "Lat: " + lat);
+            $('#lon').attr("placeholder", "Lon: " + lon);
+            $('.city').append("City: " + cityName + " " + country);
+        }else if ( cityName != "" ){
+            $('#cityName').attr("placeholder", "City: " + cityName);
+            $('.city').append("City: " + cityName + " " + country);
+        }else{
+            $('#cityName').attr("placeholder", "No city");
+            $('.city').append("City: no city");
+        }
+
         $('.description').append(description);
         $('.description').css('textTransform', 'capitalize');
         $('.temperature').append("Temperature: " + temperature + " °C");
@@ -54,10 +65,10 @@ function getWeather(use){
         $('.humidity').append("Humidity " + humidity + " %");
         $('.windSpeed').append("Wind Speed: " + wind_speed + " m/s");
         $('.clouds').append("Clouds: " + clouds + " %");
-       
+
+        
+
     }
-
-
 }
 
 function nome(){
