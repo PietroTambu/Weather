@@ -26,7 +26,7 @@ input{
 }
 input:focus {
     outline: none !important;
-    box-shadow: 0 0 5px #ffffffab;
+    box-shadow: 0 0 4px #ffffff80;
 }
 
 button:focus {
