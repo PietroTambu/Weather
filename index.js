@@ -1,9 +1,15 @@
-function getWeather(){
-    //$('.weatherResponse').html('');
+function getWeather(use){
     var cityName = $('#cityName').val();
     var lat = $('#lat').val();
     var lon = $('#lon').val();
+    
+    if(use === "byName" && cityName === ""){
+        alert("inserisci una cittá");
+    }else if(use === "coordinates" && (lat === "" || lon === "")){
+        alert("Inserisci le coordinate mancanti");
+    }
 
+    
     //identificazione se ricerca tramite coordinate o nome cittá.
     
     if(cityName !== ""){
@@ -65,8 +71,8 @@ function nome(){
     lon.prop("disabled", true);
 
     $('#button-coord').html('use me');
-    lat.attr("placeholder", "----------");
-    lon.attr("placeholder", "----------");
+    lat.attr("placeholder", "---lat---");
+    lon.attr("placeholder", "---lon---");
 }
 
 function coordinates(){
@@ -75,5 +81,51 @@ function coordinates(){
     name.val("");
 
     name.prop("disabled", true);
+
+    $('#button-byName').html('use me');
+    name.attr("placeholder", "---city-name---");
 }
 
+function check(use){
+
+    var lat = $('#lat');
+    var lon = $('#lon');
+    var cityName = $('#cityName');
+    if(use === "byName" && cityName.prop("disabled") === false){
+        getWeather(use);
+    }else if (use === "coordinates" && lat.prop("disabled") === false){
+        getWeather(use);
+    }else if (use === "byName" && cityName.prop("disabled") === true){
+        // cambiare to use byname mettere globali cityname lat lon
+        lat.val("");
+        lon.val("");
+        cityName.val("");
+
+        lat.prop("disabled", true);
+        lon.prop("disabled", true);
+        cityName.prop("disabled", false);
+
+        $('#button-coord').html('use me');
+        $('#button-byName').html('Search');
+        lat.attr("placeholder", "---lat---");
+        lon.attr("placeholder", "---lon---");
+        cityName.attr("placeholder", "Inserisci una cittá");
+
+    }else if (use === "coordinates" && lat.prop("disabled") === true){
+
+        lat.prop("disabled", false);
+        lon.prop("disabled", false);
+        cityName.prop("disabled", true);
+        
+        lat.val("");
+        lon.val("");
+        cityName.val("");
+
+    
+        $('#button-coord').html('Search');
+        $('#button-byName').html('Use me');
+        cityName.attr("placeholder", "---city-name---");
+        lat.attr("placeholder", "Latitude");
+        lon.attr("placeholder", "Longitude");
+    }
+}
