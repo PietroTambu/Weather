@@ -24,6 +24,15 @@ input{
     color: white;
     font-family: 'DoHyeon';
 }
+input:focus {
+    outline: none !important;
+    box-shadow: 0 0 10px #ffffffab;
+}
+
+button:focus {
+    outline: none !important;
+    box-shadow: 0 0 5px #ffffffab;
+}
 
 body{
 background-color: #19e4ff;
@@ -43,6 +52,7 @@ background-size: cover;
     margin:auto;
     font-family: 'Goldie';
     font-size: 40px;
+    box-shadow: 0 0 15px #ffffffab;
 }
 
 
@@ -64,8 +74,8 @@ div.search-bar-city {
     border: 3px solid rgba(255, 255, 255, 0.5);
     cursor: pointer;
     transition: box-shadow 0.5s;
-    box-shadow: none;
     padding: 7px;
+    /* box-shadow: 0 0 3px #ffffffab; */
 }
 
 div.search-bar-coordinates {
@@ -80,10 +90,6 @@ div.search-bar-coordinates {
     transition: box-shadow 0.5s;
     box-shadow: none;
     padding: 7px;
-}
-.search-box{
-    text-align: center;
-    border: 1px solid black;
 }
 
 
@@ -164,6 +170,7 @@ button,
     margin: 1px;
     font-size: 21px;
     font-family: 'DoHyeon';
+    box-shadow: 0 0 2px #ffffffab;
 }
 
 .cityname-item{
