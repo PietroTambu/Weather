@@ -19,7 +19,7 @@
         <table style="width: 100%">
             <tr>
                 <td align='left'>
-                    <input onfocus="nome()" autocomplete="off" type="text" id="cityName" name="city" class="search-box" placeholder="Inserisci una città" title="Compila questo campo." style=" border: 1px solid  rgba(255, 255, 255, 0.5);; border-radius: 4px; background-color: rgba(255, 255, 255, 0);">
+                    <input onfocus="nome()" autocomplete="off" type="text" id="cityName" name="city" class="search-box" placeholder="Insert name of city" title="required field (City Name)" style=" border: 1px solid  rgba(255, 255, 255, 0.5);; border-radius: 4px; background-color: rgba(255, 255, 255, 0);">
                 </td>
                 <td>
                     <button onclick="check('byName')" id="button-byName" class="button">Search</button>
@@ -32,10 +32,10 @@
         <table style="width: 100%">
             <tr>
                 <td align='left'>
-                    <input onfocus="coordinates()" type="text" id="lat" name="latitude" class="search-box" placeholder="Latitude" title="Compila questo campo." style="border: 2px solid  rgba(255, 255, 255, 0.5);; border-radius: 4px; background-color: rgba(255, 255, 255, 0);">
+                    <input onfocus="coordinates()" type="text" id="lat" name="latitude" class="search-box" placeholder="Latitude" title="required field (Latitude)" style="border: 2px solid  rgba(255, 255, 255, 0.5);; border-radius: 4px; background-color: rgba(255, 255, 255, 0);">
                 </td>
                 <td align='left'>
-                    <input onfocus="coordinates()" type="text" id="lon" name="longitude" class="search-box" placeholder="Longitude" title="Compila questo campo." style="border: 2px solid rgba(255, 255, 255, 0.5);; border-radius: 4px; background-color: rgba(255, 255, 255, 0);">
+                    <input onfocus="coordinates()" type="text" id="lon" name="longitude" class="search-box" placeholder="Longitude" title="required field (Longitude)" style="border: 2px solid rgba(255, 255, 255, 0.5);; border-radius: 4px; background-color: rgba(255, 255, 255, 0);">
                 </td>
                 <td>
                     <button onclick="check('coordinates')" id="button-coord" class="button">Search</button>
@@ -56,31 +56,31 @@
     <div class='weather-grid-container'  style="font-size: 20px;">
         <div class='weather-grid'>
             <div class='weather-grid-item'>
-                <p class="temperature">Temperature: - °C</p>
+                <p class="temperature" title="Temperature °Celsius">Temperature: - °C</p>
             </div>
-            <div class='weather-grid-item'>
+            <div class='weather-grid-item' title="Perceived Temperature °Celsius">
                 <p class="perceived">T. Perceived: - °C</p>
             </div>
-            <div class='weather-grid-item'>
+            <div class='weather-grid-item' title="Maximum Temperature °Celsius">
                 <p class="temperatureMax">T. Max: - °C</p>
             </div>
-            <div class='weather-grid-item'>
+            <div class='weather-grid-item' title="Minimum Temperature °Celsius">
                 <p class="temperatureMin">T. Min: - °C</p>
             </div>
         </div>
     </div>
     <div class='weather-grid-container'  style="font-size: 20px;">
         <div class='weather-grid'>
-            <div class='weather-grid-item'>
+            <div class='weather-grid-item' title="Pressure (1 atm = 100hPa)">
                 <p class="pressure">Pressure: - hPa </p>
             </div>
-            <div class='weather-grid-item'>
+            <div class='weather-grid-item' title="Humidity (0-100%)">
                 <p class="humidity">Humidity: - %</p>
             </div>
-            <div class='weather-grid-item'>
+            <div class='weather-grid-item' title="Wind Speed (Meter per Second)">
                 <p class="windSpeed">Wind speed: - m/s</p>
             </div>
-            <div class='weather-grid-item'>
+            <div class='weather-grid-item' title="Clouds (0-100%)">
                 <p class="clouds">Clouds: - %</p>
             </div>
         </div>
