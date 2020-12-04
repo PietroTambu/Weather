@@ -19,9 +19,24 @@ function getWeather(){
 
         var cityName = weatherData.name;
         var country = weatherData.sys.country;
+        // var main = weatherData.weather[0].main;
         var description = weatherData.weather[0].description;
-        $('.weatherResponse').append("The weather in " + cityName + " " + country + " is currently " + description);
 
+        var temperature = weatherData.main.temp;
+        var temperature_min = weatherData.main.temp_min;
+        var temperature_max = weatherData.main.temp_max;
+        var perceived_temperature = weatherData.main.feels_like;
+
+        var pressure = weatherData.main.pressure;
+        var humidity = weatherData.main.humidity;
+        var wind_speed = weatherData.wind.speed;
+        var clouds = weatherData.clouds.all;
+
+
+
+        $('.weatherResponse').append("The weather in " + cityName + " " + country + " is currently " + description);
+        $('.weatherResponse').append("The temperature is: " + temperature + " K");
+        
     }
 
 
