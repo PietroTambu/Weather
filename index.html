@@ -15,22 +15,24 @@
         </div>
     </header>
     <div class='search-bar-grid-container'>
-        <div class='search-bar-city search-bar-grid' id="SearchBarCity" class="test">
-            <div style="margin: 0; padding: 0;" class="search-bar-grid-item">
-                <input onfocus="nome()" ondblclick="nome('ok')" autocomplete="off" type="text" id="cityName" name="city" class="search-box" placeholder="Insert name of city" title="required field (City Name)" >
-                <button onclick="check('byName')" id="button-byName" class="button" type="submit" >Search</button>
-            </div>
+        <div class='search-bar-city search-bar-grid' id="SearchBarCity">
+            <form style="margin: 0; padding: 0;" id="form-byName">
+                <div style="margin: 0; padding: 0;" class="search-bar-grid-item">
+                    <input onfocus="nome()" ondblclick="nome('ok')" autocomplete="off" type="text" id="cityName" name="city" class="search-box" placeholder="Insert name of city" title="required field (City Name)" >
+                    <button onclick="check('byName')" id="button-byName" class="button" type="submit" >Search</button>    
+                </div>
+            </form>
         </div>
     </div>
     <div class='search-bar-grid-container'>
         <div class='search-bar-coordinates search-bar-grid' id="SearchBarCoordinates" >
-            <div style="margin: 0; padding: 0;" class="search-bar-grid-item">
-                <input onfocus="coordinates()" ondblclick="coordinates('lat')"  type="number" id="lat" name="latitude" class="search-box" placeholder="latitude" title="required field (Latitude)">
-                <input onfocus="coordinates()" ondblclick="coordinates('lon')" type="number" id="lon" name="longitude" class="search-box" placeholder="longitude" title="required field (Longitude)">
-            </div>
-            <div style="margin: 0; padding: 0;" class="search-bar-grid-item">
-                <button onclick="check('coordinates')" id="button-coord" class="button">Search</button>
-            </div>
+            <form style="margin: 0; padding: 0;" id="form-byCoords">
+                <div style="margin: 0; padding: 0;" class="search-bar-grid-item">
+                    <input onfocus="coordinates()" ondblclick="coordinates('lat')"  type="number" id="lat" name="latitude" class="search-box" placeholder="latitude" title="required field (Latitude)">
+                    <input onfocus="coordinates()" ondblclick="coordinates('lon')" type="number" id="lon" name="longitude" class="search-box" placeholder="longitude" title="required field (Longitude)">
+                    <button onclick="check('coordinates')" id="button-coord" type="submit" class="button">Search</button>
+                </div>
+            </form>
         </div>
     </div>
     <div class='weather-grid-container' style="font-size: 25px;">
