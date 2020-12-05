@@ -16,22 +16,22 @@
     </header>
 
     <div class='search-bar-city' id="SearchBarCity">
-            <input onfocus="nome()" autocomplete="off" type="text" id="cityName" name="city" class="search-box" placeholder="Insert name of city" title="required field (City Name)" style="border: 2px solid rgba(255, 255, 255, 0.5); border-radius: 10px; background-color: rgba(255, 255, 255, 0); text-align: center">
+            <input onfocus="nome()" autocomplete="off" type="text" id="cityName" name="city" class="search-box" placeholder="Insert name of city" title="required field (City Name)" >
             <button onclick="check('byName')" id="button-byName" class="button">Search</button>
     </div>
 
     <div class='search-bar-coordinates' id="SearchBarCoordinates">
-            <input onfocus="coordinates()" type="text" id="lat" name="latitude" class="search-box" placeholder="latitude" title="required field (Latitude)" style="border: 2px solid rgba(255, 255, 255, 0.5); border-radius: 10px; background-color: rgba(255, 255, 255, 0); text-align: center">
-            <input onfocus="coordinates()" type="text" id="lon" name="longitude" class="search-box" placeholder="longitude" title="required field (Longitude)" style="border: 2px solid rgba(255, 255, 255, 0.5); border-radius: 10px; background-color: rgba(255, 255, 255, 0); text-align: center">
+            <input onfocus="coordinates()" type="text" id="lat" name="latitude" class="search-box" placeholder="latitude" title="required field (Latitude)">
+            <input onfocus="coordinates()" type="text" id="lon" name="longitude" class="search-box" placeholder="longitude" title="required field (Longitude)">
             <button onclick="check('coordinates')" id="button-coord" class="button">Search</button>
     </div>
 
     <div class='weather-grid-container' style="font-size: 25px;">
         <div class='weather-grid'>
-            <div class='weather-grid-item cityname-item' title="City name + Contry">
+            <div class='weather-grid-item weather-grid-item-main' title="City name + Contry">
                 <p class="city">City:</p>
             </div>
-            <div class='weather-grid-item cityname-item' title="Current weather">
+            <div class='weather-grid-item weather-grid-item-main' title="Current weather">
                 <p class="description">Weather:</p>
             </div>
         </div>
