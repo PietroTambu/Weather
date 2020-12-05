@@ -1,9 +1,9 @@
 @media screen and (max-width: 1024) {
-
+/*
     .classe{
         width: 50%;
     }
-/*
+
     .colonna1 {
         float: left;
     }
@@ -24,13 +24,12 @@
 }
 
 @media screen and (max-width: 320) {
-
+/*
     .classe {
         width: 100%;
         float: none
-    }
+    }*/
 }
-
 
 @font-face {
     font-family: 'Goldie';
@@ -120,12 +119,7 @@ body {
     box-shadow: 0 0 15px #ffffffab;
 }
 
-table,tbody,tr,td {
-    margin: 0;
-    padding: 0;
-}
-
-div.search-bar-city {
+.search-bar-city {
     border-radius: 10px;
     text-align: center;
     margin: 20px auto;
@@ -138,7 +132,7 @@ div.search-bar-city {
     padding: 7px;
 }
 
-div.search-bar-coordinates {
+.search-bar-coordinates {
     border-radius: 10px;
     text-align: center;
     margin: 20px auto;
