@@ -1,5 +1,7 @@
-window.onload = function(){
-    
+window.onload = function checkWidth(){
+    if(window.screen.width < 420){
+        $('#lon').after("<br>");
+    }
 }
 
 $(document).ready(function(){
@@ -10,6 +12,9 @@ $(document).ready(function(){
     $("#form-byCoords").submit(function(){
         check('coordinates');
         return false;
+    });
+    $(window).resize(function(){
+        location.reload();
     });
 });
 
