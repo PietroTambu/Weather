@@ -93,6 +93,12 @@
     color: white;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 ::placeholder {
     text-align: center;
     color: rgba(255,255,255,0.8);
