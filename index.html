@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="index.js"></script>
@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="header">
-            <h1 style="margin-top: 20px; margin-bottom: 20px;" >THE WEATHER</h1>
+            <h1>THE WEATHER</h1>
         </div>
     </header>
     <div class='search-bar-grid-container'>
@@ -26,8 +26,8 @@
     </div>
     <div class='search-bar-grid-container'>
         <div class='search-bar-coordinates search-bar-grid' id="SearchBarCoordinates" >
-            <form style="margin: 0; padding: 0;" id="form-byCoords">
-                <div style="margin: 0; padding: 0;" class="search-bar-grid-item">
+            <form style="display: inline-flex;" id="form-byCoords">
+                <div class="search-bar-grid-item">
                     <input onfocus="inputCoords()" ondblclick="inputCoords('lat')"  type="number" id="lat" name="latitude" class="search-box" placeholder="latitude" title="required field (Latitude)">
                     <input onfocus="inputCoords()" ondblclick="inputCoords('lon')" type="number" id="lon" name="longitude" class="search-box" placeholder="longitude" title="required field (Longitude)">
                     <button id="button-coord" type="submit" class="button">Search</button>
