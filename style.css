@@ -200,16 +200,13 @@ div.search-bar-coordinates input.search-box {
     min-width: 70px;
     cursor: pointer;
     font-family: 'DoHyeon';
+    transition: opacity 0.7s;
+    opacity: 1;
 }
 
 .button:hover {
     transition: opacity 0.7s;
     opacity: 0.5;
-}
-
-.button {
-    transition: opacity 0.7s;
-    opacity: 1;
 }
 
 .weather-grid-container {
@@ -240,6 +237,14 @@ div.search-bar-coordinates input.search-box {
     box-shadow: 0 0 2px #ffffffab;
 }
 
-.cityname-item{
+.weather-grid-item-main {
     min-width: 350px;
+    font-size: 27px;
+}
+
+#cityName, #lat, #lon{
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
 }
