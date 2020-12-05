@@ -14,7 +14,7 @@ $(document).ready(function(){
 });
 
 
-function nome(city){
+function inputByName(city){
     var lat = $('#lat');
     var lon = $('#lon');
     var cityName = $('#cityName');
@@ -38,7 +38,7 @@ function nome(city){
     }
 }
 
-function coordinates(coord){
+function inputCoords(coord){
     var cityName = $('#cityName');
     var lat = $('#lat');
     var lon = $('#lon');
@@ -61,17 +61,17 @@ function coordinates(coord){
     }
 }
 
-function check(use){
+function check(usage){
 
     var lat = $('#lat');
     var lon = $('#lon');
     var cityName = $('#cityName');
 
-    if(use === "byName" && cityName.prop("disabled") === false){
-        getWeather(use);
-    }else if (use === "coordinates" && lat.prop("disabled") === false){
-        getWeather(use);
-    }else if (use === "byName" && cityName.prop("disabled") === true){
+    if(usage === "byName" && cityName.prop("disabled") === false){
+        getWeather(usage);
+    }else if (usage === "coordinates" && lat.prop("disabled") === false){
+        getWeather(usage);
+    }else if (usage === "byName" && cityName.prop("disabled") === true){
         // cambiare da coords a byName
         lat.val("");
         lon.val("");
@@ -92,7 +92,7 @@ function check(use){
         $('#SearchBarCoordinates').css("box-shadow", "none");
         $('#SearchBarCity').css("box-shadow", "0 0 7px #ffffffab");
 
-    }else if (use === "coordinates" && lat.prop("disabled") === true){
+    }else if (usage === "coordinates" && lat.prop("disabled") === true){
         // cambiare da byName a coords
         lat.prop("disabled", false);
         lon.prop("disabled", false);
@@ -116,16 +116,16 @@ function check(use){
     }
 }
 
-function getWeather(use){
+function getWeather(usage){
     var cityName = $('#cityName').val();
     var lat = $('#lat').val();
     var lon = $('#lon').val();
     
-    if(use === "byName" && cityName === ""){
+    if(usage === "byName" && cityName === ""){
         $('#SearchBarCity').css("animation", "shake 0.5s");
         $('#cityName').focus();
         setTimeout(() => { $('#SearchBarCity').css("animation", "none");}, 500);
-    }else if(use === "coordinates" && (lat === "" || lon === "")){
+    }else if(usage === "coordinates" && (lat === "" || lon === "")){
         $('#SearchBarCoordinates').css("animation", "shake 0.5s");
         if(lat === "" && lon === ""){
             $('#lat').focus();
@@ -134,13 +134,13 @@ function getWeather(use){
         }
         setTimeout(() => { $('#SearchBarCoordinates').css("animation", "none");}, 500);
     }else{
-        if(use === "byName"){
+        if(usage === "byName"){
             var apiCall = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=84fa0ddce2495b1f04851902133c2e3b';
         }else{
             var apiCall = 'http://api.openweathermap.org/data/2.5/weather?lat='+ lat +'&lon='+ lon +'&appid=84fa0ddce2495b1f04851902133c2e3b';
         }
         $.getJSON(apiCall, weatherCallback).fail( function() { 
-            if(use === "byName"){
+            if(usage === "byName"){
                 $('#SearchBarCity').css("animation", "shake 0.5s");
                 setTimeout(() => { $('#SearchBarCity').css("animation", "none");}, 500);
                 $('#cityName').attr("placeholder","not found, retry...");
@@ -160,7 +160,6 @@ function getWeather(use){
 
         var cityName = weatherData.name;
         var country = weatherData.sys.country;
-        //var main = weatherData.weather[0].main;
         var description = weatherData.weather[0].description;
         var lat = weatherData.coord.lat;
         var lon = weatherData.coord.lon;
@@ -181,7 +180,7 @@ function getWeather(use){
             $('.'+info[i]).html('');
         }
 
-        if(use === "byName"){
+        if(usage === "byName"){
             $('#lat').attr("placeholder", "Lat: " + lat);
             $('#lon').attr("placeholder", "Lon: " + lon);
             $('.city').append("City: " + cityName + " " + country);
