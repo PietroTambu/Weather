@@ -113,7 +113,6 @@ body {
     border-radius: 10px;
     text-align: center;
     margin: 20px auto;
-    padding: 0;
     width: 400px;
     background-color: #00d9ff28;
     border: 3px solid rgba(255, 255, 255, 0.5);
@@ -150,7 +149,6 @@ div.search-bar-city input.search-box {
     text-align: center;
     color: white;
     font-family: 'DoHyeon';
-    
 }
 
 div.search-bar-coordinates input.search-box {
@@ -228,14 +226,15 @@ div.search-bar-coordinates input.search-box {
 }
 
 .search-bar-grid-item {
-height: auto;
-flex-wrap: wrap;
+    height: auto;
+    flex-wrap: wrap;
+    margin:0;
 }
 
 .search-bar-grid {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        flex-direction: row;
-        align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
 }
