@@ -91,7 +91,7 @@ function getWeather(use){
     }
 }
 
-function nome(){
+function nome(city){
     var lat = $('#lat');
     var lon = $('#lon');
     var cityName = $('#cityName');
@@ -109,9 +109,13 @@ function nome(){
     $('#SearchBarCity').css("box-shadow", "0 0 7px #ffffffab");
     $('#SearchBarCoordinates').css("box-shadow", "none");
     $('#cityName').attr("placeholder", "Insert name of city");
+    if(city === 'ok'){
+        cityName.val("");
+        cityName.focus();
+    }
 }
 
-function coordinates(){
+function coordinates(coord){
     var cityName = $('#cityName');
     var lat = $('#lat');
     var lon = $('#lon');
@@ -125,6 +129,13 @@ function coordinates(){
     $('#SearchBarCity').css("box-shadow", "none");
     $('#lat').attr("placeholder", "latitude");
     $('#lon').attr("placeholder", "longitude");
+    if(coord === 'lat'){
+        lat.val("");
+        lat.focus();
+    }else if(coord === 'lon'){
+        lon.val("");
+        lon.focus();
+    }
 }
 
 function check(use){
@@ -181,3 +192,5 @@ function check(use){
         $('#SearchBarCity').css("box-shadow", "none");
     }
 }
+
+
