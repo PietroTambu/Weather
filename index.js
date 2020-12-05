@@ -14,7 +14,7 @@ $(document).ready(function(){
 });
 
 
-function inputByName(city){
+function inputName(city){
     var lat = $('#lat');
     var lon = $('#lon');
     var cityName = $('#cityName');
