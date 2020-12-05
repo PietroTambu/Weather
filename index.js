@@ -13,7 +13,7 @@ $(document).ready(function(){
         check('coordinates');
         return false;
     });
-    $(window).resize(function(){
+    $(window).on("orientationchange",function(){
         location.reload();
     });
 });
