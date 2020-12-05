@@ -1,3 +1,20 @@
+
+window.onload = function(){
+    
+}
+
+$(document).ready(function(){
+    $("#form-byName").submit(function(){
+        check('byName');
+        return false;
+    });
+    $("#form-byCoords").submit(function(){
+        check('coordinates');
+        return false;
+    });
+});
+
+
 function getWeather(use){
     var cityName = $('#cityName').val();
     var lat = $('#lat').val();
