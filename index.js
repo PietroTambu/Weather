@@ -1,5 +1,7 @@
 window.onload = function checkWidth(){
+    alert(window.screen.width);
     if(window.screen.width < 420){
+        
         $('#lon').after("<br>");
     }
 }
@@ -7,10 +9,13 @@ window.onload = function checkWidth(){
 $(document).ready(function(){
     $("#form-byName").submit(function(){
         check('byName');
+        $('#cityName').blur();
         return false;
     });
     $("#form-byCoords").submit(function(){
         check('coordinates');
+        $('#lat').blur();
+        $('#lon').blur();
         return false;
     });
     $(window).on("orientationchange",function(){
@@ -19,7 +24,7 @@ $(document).ready(function(){
 });
 
 
-function inputName(city){
+function inputName(dbl){
     var lat = $('#lat');
     var lon = $('#lon');
     var cityName = $('#cityName');
@@ -37,7 +42,7 @@ function inputName(city){
     $('#SearchBarCity').css("box-shadow", "0 0 7px #ffffffab");
     $('#SearchBarCoordinates').css("box-shadow", "none");
     $('#cityName').attr("placeholder", "Insert name of city");
-    if(city === 'ok'){
+    if(dbl === 'dbl'){
         cityName.val("");
         cityName.focus();
     }
