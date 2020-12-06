@@ -69,8 +69,8 @@ input::-webkit-inner-spin-button {
 h1{
     display:table-cell;
     vertical-align:middle;
-    padding-top: 3%;
-    padding-bottom: 3%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 ::placeholder {
@@ -92,9 +92,9 @@ body {
     border: 5px solid #fff;
     max-width: 600px;
     margin: auto;
-    /*font-family: 'Goldie';*/
+    font-family: 'Goldie';
     box-shadow: 0 0 15px #ffffffab;
-    font-size: 30px;
+    font-size: 37px;
     height: 100%;
     width: 100%;
     display:flex;
