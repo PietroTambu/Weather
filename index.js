@@ -1,26 +1,22 @@
 window.onload = function checkWidth(){
-    alert(window.screen.width);
-    if(window.screen.width < 420){
-        
+    if(window.screen.width < 420){ 
         $('#lon').after("<br>");
     }
 }
 
 $(document).ready(function(){
     $("#form-byName").submit(function(){
-        check('byName');
-        $('#cityName').blur();
+        check('byName'); 
         return false;
     });
     $("#form-byCoords").submit(function(){
         check('coordinates');
-        $('#lat').blur();
-        $('#lon').blur();
         return false;
     });
     $(window).on("orientationchange",function(){
         location.reload();
     });
+    setTimeout(() => { $('html, body').animate({scrollTop:0}, 'slow'); }, 500);
 });
 
 
@@ -211,9 +207,19 @@ function getWeather(usage){
         $('.pressure').append("Pressure: " + pressure + " hPa");
         $('.humidity').append("Humidity: " + humidity + " %");
         $('.windSpeed').append("Wind Speed: " + wind_speed + " m/s");
-        $('.clouds').append("Clouds: " + clouds + " %"); 
-
-    }
+        $('.clouds').append("Clouds: " + clouds + " %");
+        $('#cityName').blur();
+        $('#lat').blur();
+        $('#lon').blur();
+        setTimeout(() => { 
+            if(usage === "byName"){
+                $('html,body').animate({scrollTop: $('#offsetTopCoords').offset().top},'slow');
+            }else{
+                $('html,body').animate({scrollTop: $('#offsetTopCity').offset().top},'slow');
+            }
+        }, 800);
+        
+   }
 }
 
 
