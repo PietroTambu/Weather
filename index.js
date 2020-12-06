@@ -212,11 +212,8 @@ function getWeather(usage){
         $('#lat').blur();
         $('#lon').blur();
         setTimeout(() => { 
-            if(usage === "byName"){
-                $('html,body').animate({scrollTop: $('#offsetTopCoords').offset().top},'slow');
-            }else{
-                $('html,body').animate({scrollTop: $('#offsetTopCity').offset().top},'slow');
-            }
+            $('html,body').animate({scrollTop: $('#offsetTop').offset().top},'slow');
+            $('html,body').animate({scrollTop: $('#offsetTop').offset().top},'slow');
         }, 800);
         
    }
