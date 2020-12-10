@@ -59,6 +59,7 @@ html, body { /* previene horizontal scroll (next step ridimenzionare scritte e d
     overflow-x: hidden;
 }
 
+
 * {
     margin: 10px;
     padding: 0;
@@ -102,7 +103,7 @@ body {
     box-shadow: 0 0 15px #ffffffab;
     font-size: 37px;
     height: 100%;
-    width: 100%;
+    width: 90%;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -130,7 +131,6 @@ body {
     border: 3px solid rgba(255, 255, 255, 0.5);
     cursor: pointer;
     transition: box-shadow 0.5s;
-    box-shadow: none;
     padding: 7px;
 }
 
@@ -150,8 +150,10 @@ button:focus {
 }
 
 div.search-bar-city input.search-box {
+    display: table-cell;
     font-size: 20px;
-    width: 275px;
+    max-width: 233px;
+    width: 90%;
     padding: 5px;
     border: none;
     margin-left: 2px;
@@ -164,8 +166,10 @@ div.search-bar-city input.search-box {
 }
 
 div.search-bar-coordinates input.search-box {
+    display: table-cell;
     font-size: 20px;
-    width: 125px;
+    max-width: 125px;
+    width: 90%;
     padding: 5px;
     border: none;
     margin-left: 2px;
@@ -174,10 +178,11 @@ div.search-bar-coordinates input.search-box {
     font-size: 25px;
     text-align: center;
     color: white;
-    font-family: 'DoHyeon';
 }
 
+
 .button {
+    display: table-cell;
     margin: 0;
     border-radius: 10px;
     border: 1px solid #fff;
@@ -203,8 +208,20 @@ div.search-bar-coordinates input.search-box {
     text-align: center;
 }
 
+
 .weather-grid {
-    width: 900px;
+    width: 90%;
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.weather-grid-main {
+    width: 90%;
+    max-width: 500px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -213,9 +230,11 @@ div.search-bar-coordinates input.search-box {
 }
 
 .weather-grid-item {
+    display: table-cell;
+    width: 215px;
     border: 3px solid rgba(255, 255, 255, 0.5);
     background-color: #00d9ff28;
-    min-width: 210px;
+    max-width: 210px;
     height: auto;
     flex-wrap: wrap;
     border-radius: 15px;
@@ -226,7 +245,17 @@ div.search-bar-coordinates input.search-box {
 }
 
 .weather-grid-item-main {
-    min-width: 350px;
+    display: table-cell;
+    width: 200px;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    background-color: #00d9ff28;
+    max-width: 900px;
+    height: auto;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    margin: 1px;
+    font-family: 'DoHyeon';
+    box-shadow: 0 0 2px #ffffffab;
     font-size: 27px;
 }
 
