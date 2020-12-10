@@ -54,6 +54,11 @@
     }
 }
 
+html, body { /* previene horizontal scroll (next step ridimenzionare scritte e div) */
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 * {
     margin: 10px;
     padding: 0;
