@@ -140,10 +140,12 @@ function getWeather(usage){
     var lon = $('#lon').val();
     
     if(usage === "byName" && cityName === ""){
+        // input Cityname is empty
         $('#SearchBarCity').css("animation", "shake 0.5s");
         $('#cityName').focus();
         setTimeout(() => { $('#SearchBarCity').css("animation", "none");}, 500);
     }else if(usage === "coordinates" && (lat === "" || lon === "")){
+        // input coords is empty
         $('#SearchBarCoordinates').css("animation", "shake 0.5s");
         if(lat === "" && lon === ""){
             $('#lat').focus();
@@ -159,11 +161,13 @@ function getWeather(usage){
         }
         $.getJSON(apiCall, weatherCallback).fail( function() { 
             if(usage === "byName"){
+                // fail request JSON by city
                 $('#SearchBarCity').css("animation", "shake 0.5s");
                 setTimeout(() => { $('#SearchBarCity').css("animation", "none");}, 500);
                 $('#cityName').attr("placeholder","not found, retry...");
                 $('#cityName').val("");
             }else{
+                // fail request JSON by coords
                 $('#SearchBarCoordinates').css("animation", "shake 0.5s");
                 setTimeout(() => { $('#SearchBarCoordinates').css("animation", "none");}, 500);
                 $('#lat').attr("placeholder","not");
