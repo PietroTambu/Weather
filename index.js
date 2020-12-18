@@ -1,14 +1,8 @@
-
-/* TROVARE ALTRA SOLUZIONE AL PROBLEMA ( TENERE INSIEME DIV INPUT COORDINATE )
 window.onload = function checkWidth(){
     if(window.screen.width < 420){ 
         $('#lon').after("<br>");
     }
 }
-*/
-
-
-
 
 $(document).ready(function(){
     $("#form-byName").submit(function(){
@@ -30,21 +24,20 @@ function inputName(dbl){
     var lat = $('#lat');
     var lon = $('#lon');
     var cityName = $('#cityName');
-    // disabled lat & lon input / change button city to USE
+
     lat.val("");
     lon.val("");
+
     lat.prop("disabled", true);
     lon.prop("disabled", true);
+
     $('#button-coord').html('use');
-    // CSS
     lat.fadeTo("slow", 0.7);
     lon.fadeTo("slow", 0.7);
     cityName.fadeTo("slow", 1);
     $('#SearchBarCity').css("box-shadow", "0 0 7px #ffffffab");
     $('#SearchBarCoordinates').css("box-shadow", "none");
-    //placeholder
     $('#cityName').attr("placeholder", "Insert name of city");
-    // on dblclick
     if(dbl === 'dbl'){
         cityName.val("");
         cityName.focus();
@@ -55,20 +48,16 @@ function inputCoords(coord){
     var cityName = $('#cityName');
     var lat = $('#lat');
     var lon = $('#lon');
-    // disabled city input / change button coords to USE
     cityName.val("");
     cityName.prop("disabled", true);
     $('#button-byName').html('use');
-    // CSS
     cityName.fadeTo("slow", 0.7);
     lat.fadeTo("slow", 1);
     lon.fadeTo("slow", 1);
     $('#SearchBarCoordinates').css("box-shadow", "0 0 7px #ffffffab");
     $('#SearchBarCity').css("box-shadow", "none");
-    //placeholder
     $('#lat').attr("placeholder", "latitude");
     $('#lon').attr("placeholder", "longitude");
-    // dblclick on latitude on longitude
     if(coord === 'lat'){
         lat.val("");
         lat.focus();
@@ -131,7 +120,6 @@ function check(usage){
         $('#SearchBarCoordinates').css("box-shadow", "0 0 7px #ffffffab");
         $('#SearchBarCity').css("box-shadow", "none");
     }
-
 }
 
 function getWeather(usage){
@@ -140,12 +128,10 @@ function getWeather(usage){
     var lon = $('#lon').val();
     
     if(usage === "byName" && cityName === ""){
-        // input Cityname is empty
         $('#SearchBarCity').css("animation", "shake 0.5s");
         $('#cityName').focus();
         setTimeout(() => { $('#SearchBarCity').css("animation", "none");}, 500);
     }else if(usage === "coordinates" && (lat === "" || lon === "")){
-        // input coords is empty
         $('#SearchBarCoordinates').css("animation", "shake 0.5s");
         if(lat === "" && lon === ""){
             $('#lat').focus();
@@ -161,13 +147,11 @@ function getWeather(usage){
         }
         $.getJSON(apiCall, weatherCallback).fail( function() { 
             if(usage === "byName"){
-                // fail request JSON by city
                 $('#SearchBarCity').css("animation", "shake 0.5s");
                 setTimeout(() => { $('#SearchBarCity').css("animation", "none");}, 500);
                 $('#cityName').attr("placeholder","not found, retry...");
                 $('#cityName').val("");
             }else{
-                // fail request JSON by coords
                 $('#SearchBarCoordinates').css("animation", "shake 0.5s");
                 setTimeout(() => { $('#SearchBarCoordinates').css("animation", "none");}, 500);
                 $('#lat').attr("placeholder","not");
@@ -234,7 +218,3 @@ function getWeather(usage){
         
    }
 }
-
-
-
-
