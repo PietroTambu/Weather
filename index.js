@@ -1,41 +1,17 @@
-window.onload = function checkWidth(){
-    if(window.innerWidth <= 700){
-            $(".header").css('font-size', "7vw" );
-        }else if(window.innerWidth >= 700){
-            $(".header").css( 'font-size', "50px" );
-        }
-}
-
-$(document).ready(function(){
-    $("#form-byName").submit(function(){
-        check('byName'); 
-        return false;
-    });
-    $("#form-byCoords").submit(function(){
-        check('coordinates');
-        return false;
-    });
-    $(window).on("orientationchange",function(){
-        location.reload();
-    });
-    setTimeout(() => { $('html, body').animate({scrollTop:0}, 'slow'); }, 500);
-
-    $(window).resize(function() {
-        if(window.innerWidth <= 700){
-            $(".header").css('font-size', "7vw" );
-        }else if(window.innerWidth >= 700){
-            $(".header").css( 'font-size', "50px" );
-        }
-    });
+// By Pietro Tamburini per Start2Impact.
 
 
-});
+window.onload = function(){
 
-
-function inputName(dbl){
     var lat = $('#lat');
     var lon = $('#lon');
     var cityName = $('#cityName');
+
+    if(window.innerWidth <= 700){
+        $(".header").css('font-size', "7vw" );
+    }else if(window.innerWidth >= 700){
+        $(".header").css( 'font-size', "50px" );
+    }
 
     lat.val("");
     lon.val("");
@@ -50,32 +26,36 @@ function inputName(dbl){
     $('#SearchBarCity').css("box-shadow", "0 0 7px #ffffffab");
     $('#SearchBarCoordinates').css("box-shadow", "none");
     $('#cityName').attr("placeholder", "Insert name of city");
-    if(dbl === 'dbl'){
-        cityName.val("");
-        cityName.focus();
-    }
 }
 
-function inputCoords(coord){
-    var cityName = $('#cityName');
-    var lat = $('#lat');
-    var lon = $('#lon');
-    cityName.val("");
-    cityName.prop("disabled", true);
-    $('#button-byName').html('use');
-    cityName.fadeTo("slow", 0.7);
-    lat.fadeTo("slow", 1);
-    lon.fadeTo("slow", 1);
-    $('#SearchBarCoordinates').css("box-shadow", "0 0 7px #ffffffab");
-    $('#SearchBarCity').css("box-shadow", "none");
-    $('#lat').attr("placeholder", "latitude");
-    $('#lon').attr("placeholder", "longitude");
-    if(coord === 'lat'){
-        lat.val("");
-        lat.focus();
-    }else if(coord === 'lon'){
-        lon.val("");
-        lon.focus();
+$(document).ready(function(){
+    $("#form-byName").submit(function(){
+        check('byName'); 
+        return false;
+    });
+    $("#form-byCoords").submit(function(){
+        check('coordinates');
+        return false;
+    });
+
+    $(window).resize(function() {
+        if(window.innerWidth <= 700){
+            $(".header").css('font-size', "7vw" );
+        }else if(window.innerWidth >= 700){
+            $(".header").css( 'font-size', "50px" );
+        }
+    });
+
+    setTimeout(() => { $('html, body').animate({scrollTop:0}, 'slow'); }, 500);
+});
+
+function dblClick(type){
+    if(type === "byName"){
+        $('#cityName').val("");
+    }else if(type === "lon"){
+        $('#lon').val("");
+    }else{
+        $('#lat').val("");
     }
 }
 
@@ -90,7 +70,6 @@ function check(usage){
     }else if (usage === "coordinates" && lat.prop("disabled") === false){
         getWeather(usage);
     }else if (usage === "byName" && cityName.prop("disabled") === true){
-        // cambiare da coords a byName
         lat.val("");
         lon.val("");
         cityName.val("");
@@ -111,7 +90,6 @@ function check(usage){
         $('#SearchBarCity').css("box-shadow", "0 0 7px #ffffffab");
 
     }else if (usage === "coordinates" && lat.prop("disabled") === true){
-        // cambiare da byName a coords
         lat.prop("disabled", false);
         lon.prop("disabled", false);
         cityName.prop("disabled", true);
@@ -212,14 +190,14 @@ function getWeather(usage){
 
         $('.description').append(description);
         $('.description').css('textTransform', 'capitalize');
-        $('.temperature').append("Temperature: " + temperature + " °C");
-        $('.perceived').append("T. perceived: " + perceived_temperature + " °C");
-        $('.temperatureMax').append("T. Max: " + temperature_max + " °C");
-        $('.temperatureMin').append("T. Min: " + temperature_min + " °C");
-        $('.pressure').append("Pressure: " + pressure + " hPa");
-        $('.humidity').append("Humidity: " + humidity + " %");
-        $('.windSpeed').append("Wind Speed: " + wind_speed + " m/s");
-        $('.clouds').append("Clouds: " + clouds + " %");
+        $('.temperature').append("Temperature: " + temperature + "°C");
+        $('.perceived').append("T. perceived: " + perceived_temperature + "°C");
+        $('.temperatureMax').append("T. Max: " + temperature_max + "°C");
+        $('.temperatureMin').append("T. Min: " + temperature_min + "°C");
+        $('.pressure').append("Pressure: " + pressure + "hPa");
+        $('.humidity').append("Humidity: " + humidity + "%");
+        $('.windSpeed').append("Wind Speed: " + wind_speed + "m/s");
+        $('.clouds').append("Clouds: " + clouds + "%");
         $('#cityName').blur();
         $('#lat').blur();
         $('#lon').blur();
