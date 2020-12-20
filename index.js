@@ -9,8 +9,19 @@ window.onload = function(){
 
     if(window.innerWidth <= 700){
         $(".header").css('font-size', "7vw" );
-    }else if(window.innerWidth >= 700){
+    }else if(window.innerWidth > 700){
         $(".header").css( 'font-size', "50px" );
+    }
+    if(window.innerWidth <= 500){
+        $("input.search-box").css('font-size', "5vw" );
+        $(".button").css('font-size', "4vw" );
+        $(".main").css('font-size', "4vw" );
+        $(".secondary").css('font-size', "4vw" );
+    }else if(window.innerWidth > 500){
+        $("input.search-box").css( 'font-size', "25px" );
+        $(".button").css('font-size', "19px" );
+        $(".main").css('font-size', '25px' );
+        $(".secondary").css('font-size', "20px" );
     }
 
     lat.val("");
@@ -43,6 +54,17 @@ $(document).ready(function(){
             $(".header").css('font-size', "7vw" );
         }else if(window.innerWidth >= 700){
             $(".header").css( 'font-size', "50px" );
+        }
+        if(window.innerWidth <= 500){
+            $("input.search-box").css('font-size', "5vw" );
+            $(".button").css('font-size', "4vw" );
+            $(".main").css('font-size', "4vw" );
+            $(".secondary").css('font-size', "4vw" );
+        }else if(window.innerWidth > 500){
+            $("input.search-box").css( 'font-size', "25px" );
+            $(".button").css('font-size', "19px" );
+            $(".main").css('font-size', '25px' );
+            $(".secondary").css('font-size', "20px" );
         }
     });
 
