@@ -95,7 +95,6 @@ body {
     margin: auto;
     font-family: 'Goldie';
     box-shadow: 0 0 15px #ffffffab;
-    font-size: 37px; /* ^^^^^ */
     height: 100%;
     width: 100%;
     display: flex;
