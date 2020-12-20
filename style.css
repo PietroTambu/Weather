@@ -105,7 +105,7 @@ body {
 .search-bar-city {
     border-radius: 10px;
     text-align: center;
-    margin: 20px auto;
+    margin: auto;
     padding: 10px;
     max-width: 400px;
     width: 100%;
@@ -120,7 +120,7 @@ body {
 .search-bar-coordinates {
     border-radius: 10px;
     text-align: center;
-    margin: 20px auto;
+    margin: auto;
     max-width: 400px; 
     width: 100%;
     background-color: #00d9ff28;
@@ -142,10 +142,8 @@ div.search-bar-city input.search-box {
     width: 85%;
     padding: 5px;
     border: none;
-    margin-left: 2px;
     border-radius: 10px;
     font-family: 'DoHyeon';
-    font-size: 25px; /* ^^^^^ */
     text-align: center;
     color: white;
     font-family: 'DoHyeon';
@@ -156,10 +154,8 @@ div.search-bar-coordinates input.search-box {
     width: 90%;
     padding: 5px;
     border: none;
-    margin-left: 2px;
     border-radius: 10px;
     font-family: 'DoHyeon';
-    font-size: 25px; /* ^^^^^ */
     text-align: center;
     color: white;
     font-family: 'DoHyeon';
@@ -185,8 +181,7 @@ input, button{
     border: 1px solid #fff;
     background-color: #00d9ff69;
     color: rgb(255, 255, 255);
-    font-size: 19px; /* ^^^^^ */
-    max-width: 60px; /* ^^^^^ */
+    max-width: 75px; 
     width: 100%;
     cursor: pointer;
     font-family: 'DoHyeon';
@@ -224,7 +219,6 @@ input, button{
     flex-wrap: wrap;
     border-radius: 15px;
     margin: 1px;
-    font-size: 21px;
     font-family: 'DoHyeon';
     box-shadow: 0 0 2px #ffffffab;
 }
@@ -232,7 +226,6 @@ input, button{
 .weather-grid-item-main {
     max-width: 350px;
     width: 100%;
-    font-size: 27px;
 }
 
 #cityName,
@@ -258,5 +251,5 @@ input, button{
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    margin: 1%;
+    margin: auto;
 }
