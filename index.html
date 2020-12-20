@@ -18,7 +18,7 @@
         <div class='search-bar-city search-bar-grid' id="SearchBarCity">
             <form id="form-byName">
                 <div class="search-bar-grid-item">
-                    <input onfocus="inputName()" ondblclick="inputName('dbl')" autocomplete="off" type="text" id="cityName" name="city" class="search-box" placeholder="Insert name of city" title="required field (City Name)" >
+                    <input ondblclick="dblClick('byName')" autocomplete="off" type="text" id="cityName" name="city" class="search-box" placeholder="Insert name of city" title="required field (City Name)" >
                     <button id="button-byName" class="button" type="submit" >Search</button>    
                 </div>
             </form>
@@ -29,8 +29,8 @@
         <div class='search-bar-coordinates search-bar-grid' id="SearchBarCoordinates" >
             <form id="form-byCoords">
                 <div class="search-bar-grid-item">
-                    <input onfocus="inputCoords()" ondblclick="inputCoords('lat')"  type="number" id="lat" name="latitude" class="search-box" placeholder="latitude" title="required field (Latitude)">
-                    <input onfocus="inputCoords()" ondblclick="inputCoords('lon')" type="number" id="lon" name="longitude" class="search-box" placeholder="longitude" title="required field (Longitude)">
+                    <input ondblclick="dblClick('lat')"  type="number" id="lat" name="latitude" class="search-box" placeholder="latitude" title="required field (Latitude)">
+                    <input ondblclick="dblClick('lon')" type="number" id="lon" name="longitude" class="search-box" placeholder="longitude" title="required field (Longitude)">
                     <button id="button-coord" type="submit" class="button">Search</button>
                 </div>
             </form>
