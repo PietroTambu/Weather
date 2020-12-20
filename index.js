@@ -1,7 +1,9 @@
 window.onload = function checkWidth(){
-    if(window.screen.width < 420){ 
-        $('#lon').after("<br>");
-    }
+    if(window.innerWidth <= 700){
+            $(".header").css('font-size', "7vw" );
+        }else if(window.innerWidth >= 700){
+            $(".header").css( 'font-size', "50px" );
+        }
 }
 
 $(document).ready(function(){
@@ -17,6 +19,16 @@ $(document).ready(function(){
         location.reload();
     });
     setTimeout(() => { $('html, body').animate({scrollTop:0}, 'slow'); }, 500);
+
+    $(window).resize(function() {
+        if(window.innerWidth <= 700){
+            $(".header").css('font-size', "7vw" );
+        }else if(window.innerWidth >= 700){
+            $(".header").css( 'font-size', "50px" );
+        }
+    });
+
+
 });
 
 
