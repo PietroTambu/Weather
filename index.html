@@ -19,7 +19,7 @@
             <form id="form-byName">
                 <div class="search-bar-grid-item">
                     <input ondblclick="dblClick('byName')" autocomplete="off" type="text" id="cityName" name="city" class="search-box" placeholder="Insert name of city" title="required field (City Name)" >
-                    <button id="button-byName" class="button" type="submit" >Search</button>    
+                    <button id="button-byName" type="submit" class="button">Search</button>    
                 </div>
             </form>
         </div>
@@ -31,13 +31,15 @@
                 <div class="search-bar-grid-item">
                     <input ondblclick="dblClick('lat')"  type="number" id="lat" name="latitude" class="search-box" placeholder="latitude" title="required field (Latitude)">
                     <input ondblclick="dblClick('lon')" type="number" id="lon" name="longitude" class="search-box" placeholder="longitude" title="required field (Longitude)">
+                </div>
+                <div class="search-bar-grid-item">
                     <button id="button-coord" type="submit" class="button">Search</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <div class='weather-grid-container' style="font-size: 25px;" id="offsetTop">
+    <div class='weather-grid-container main' id="offsetTop">
         <div class='weather-grid'>
             <div class='weather-grid-item weather-grid-item-main' title="City name + Contry">
                 <p class="city">City:</p>
@@ -48,7 +50,7 @@
         </div>
     </div>
 
-    <div class='weather-grid-container'  style="font-size: 20px;">
+    <div class='weather-grid-container secondary'>
         <div class='weather-grid'>
             <div class='weather-grid-item'>
                 <p class="temperature" title="Temperature °Celsius">Temperature: - °C</p>
@@ -65,7 +67,7 @@
         </div>
     </div>
 
-    <div class='weather-grid-container'  style="font-size: 20px;">
+    <div class='weather-grid-container secondary'>
         <div class='weather-grid'>
             <div class='weather-grid-item' title="Pressure (1 atm ≃ 1000hPa)">
                 <p class="pressure">Pressure: - hPa </p>
