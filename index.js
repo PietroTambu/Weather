@@ -13,11 +13,15 @@ window.onload = function(){
         $(".button").css('font-size', "4vw" );
         $(".main").css('font-size', "5vw" );
         $(".secondary").css('font-size', "4vw" );
+        $("#icon").css('width', "24vw");
+        $("#icon").css('height', "24vw");
     }else if(window.innerWidth > 500){
         $("input.search-box").css( 'font-size', "25px" );
         $(".button").css('font-size', "19px" );
         $(".main").css('font-size', '25px' );
         $(".secondary").css('font-size', "20px" );
+        $("#icon").css('width', "125px");
+        $("#icon").css('height', "125px");
     }
 
     lat.val("");
@@ -31,6 +35,7 @@ window.onload = function(){
     $('#SearchBarCity').css("box-shadow", "0 0 7px #ffffffab");
     $('#SearchBarCoordinates').css("box-shadow", "none");
     $('#cityName').attr("placeholder", "Insert name of city");
+    $('.div-icon').css('visibility', 'hidden');
 }
 
 $(document).ready(function(){
@@ -54,25 +59,40 @@ $(document).ready(function(){
             $(".button").css('font-size', "4vw" );
             $(".main").css('font-size', "5vw" );
             $(".secondary").css('font-size', "4vw" );
+            $("#icon").css('width', "24vw");
+            $("#icon").css('height', "24vw");
         }else if(window.innerWidth > 500){
             $("input.search-box").css( 'font-size', "25px" );
             $(".button").css('font-size', "19px" );
             $(".main").css('font-size', '25px' );
             $(".secondary").css('font-size', "20px" );
+            $("#icon").css('width', "125px");
+            $("#icon").css('height', "125px");
         }
     });
 
     setTimeout(() => { $('html, body').animate({scrollTop:0}, 'slow'); }, 500);
 });
 
-function dblClick(type){
+function inputClick(type){
+    var lat = $('#lat');
+    var lon = $('#lon');
+    var cityName = $('#cityName');
+
+    if(type === "coordPlaceholder"){
+        lat.attr("placeholder", "latitude");
+        lon.attr("placeholder", "longitude");
+    }else if(type === "namePlaceholder"){
+        cityName.attr("placeholder", "Insert name of city");
+    }
     if(type === "byName"){
         $('#cityName').val("");
     }else if(type === "lon"){
         $('#lon').val("");
-    }else{
+    }else if(type === "lat"){
         $('#lat').val("");
     }
+
 }
 
 function check(usage){
@@ -104,6 +124,7 @@ function check(usage){
         cityName.fadeTo("slow", 1);
         $('#SearchBarCoordinates').css("box-shadow", "none");
         $('#SearchBarCity').css("box-shadow", "0 0 7px #ffffffab");
+        cityName.focus();
 
     }else if (usage === "coordinates" && lat.prop("disabled") === true){
         lat.prop("disabled", false);
@@ -125,6 +146,7 @@ function check(usage){
         cityName.fadeTo("slow", 0.7);
         $('#SearchBarCoordinates').css("box-shadow", "0 0 7px #ffffffab");
         $('#SearchBarCity').css("box-shadow", "none");
+        lat.focus();
     }
 }
 
@@ -143,6 +165,8 @@ function getWeather(usage){
             $('#lat').focus();
         }else if (lat !== "" && lon === ""){
             $('#lon').focus();
+        }else if(lat === "" && lon !== ""){
+            $('#lat').focus();
         }
         setTimeout(() => { $('#SearchBarCoordinates').css("animation", "none");}, 500);
     }else{
@@ -176,6 +200,7 @@ function getWeather(usage){
         var lat = weatherData.coord.lat;
         var lon = weatherData.coord.lon;
 
+        var icon = weatherData.weather[0].icon;
         var temperature = Math.round((weatherData.main.temp - 273.15) * 100) / 100;
         var temperature_min = Math.round((weatherData.main.temp_min - 273.15) * 100) / 100;
         var temperature_max = Math.round((weatherData.main.temp_max - 273.15) * 100) / 100;
@@ -203,7 +228,8 @@ function getWeather(usage){
             $('#cityName').attr("placeholder", "No city");
             $('.city').append("City: no city");
         }
-
+        $('.div-icon').css('visibility', 'visible');
+        $("#icon").attr( "src", "http://openweathermap.org/img/wn/" + icon + "@4x.png" );
         $('.description').append(description);
         $('.description').css('textTransform', 'capitalize');
         $('.temperature').append("Temperature: " + temperature + "°C");
