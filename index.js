@@ -1,5 +1,4 @@
 window.onload = function(){
-
     var lat = $('#lat');
     var lon = $('#lon');
     var cityName = $('#cityName');
@@ -23,10 +22,8 @@ window.onload = function(){
 
     lat.val("");
     lon.val("");
-
     lat.prop("disabled", true);
     lon.prop("disabled", true);
-
     $('#button-coord').html('use');
     lat.fadeTo("slow", 0.7);
     lon.fadeTo("slow", 0.7);
