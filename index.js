@@ -1,6 +1,3 @@
-// By Pietro Tamburini per Start2Impact.
-
-
 window.onload = function(){
 
     var lat = $('#lat');
@@ -15,7 +12,7 @@ window.onload = function(){
     if(window.innerWidth <= 500){
         $("input.search-box").css('font-size', "5vw" );
         $(".button").css('font-size', "4vw" );
-        $(".main").css('font-size', "4vw" );
+        $(".main").css('font-size', "5vw" );
         $(".secondary").css('font-size', "4vw" );
     }else if(window.innerWidth > 500){
         $("input.search-box").css( 'font-size', "25px" );
@@ -58,7 +55,7 @@ $(document).ready(function(){
         if(window.innerWidth <= 500){
             $("input.search-box").css('font-size', "5vw" );
             $(".button").css('font-size', "4vw" );
-            $(".main").css('font-size', "4vw" );
+            $(".main").css('font-size', "5vw" );
             $(".secondary").css('font-size', "4vw" );
         }else if(window.innerWidth > 500){
             $("input.search-box").css( 'font-size', "25px" );
