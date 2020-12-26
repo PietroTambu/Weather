@@ -90,7 +90,7 @@ body {
 .header {
     border-radius: 150px;
     text-align: center;
-    border: 5px solid #fff;
+    border: 6px solid #fff;
     max-width: 600px;
     margin: auto;
     font-family: 'Goldie';
@@ -159,6 +159,13 @@ div.search-bar-coordinates input.search-box {
     text-align: center;
     color: white;
     font-family: 'DoHyeon';
+}
+
+.div-icon{
+    width: fit-content;
+    margin: auto;
+    border-radius: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.5);
 }
 
 input:focus {
