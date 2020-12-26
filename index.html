@@ -1,88 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Weather</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Weather</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="index.js"></script>
+    </head>
+    <body>
 
-    <div class="header">
-        <h1>THE WEATHER</h1>
-    </div>
+        <div class="header">
+            <h1>THE WEATHER</h1>
+        </div>
 
-    <div class='search-bar-grid-container'>
-        <div class='search-bar-city search-bar-grid' id="SearchBarCity">
-            <form id="form-byName">
-                <div class="search-bar-grid-item">
-                    <input ondblclick="dblClick('byName')" autocomplete="off" type="text" id="cityName" name="city" class="search-box" placeholder="Insert name of city" title="required field (City Name)" >
-                    <button id="button-byName" type="submit" class="button">Search</button>    
+        <div class='search-bar-grid-container'>
+            <div class='search-bar-city search-bar-grid' id="SearchBarCity">
+                <form id="form-byName">
+                    <div class="search-bar-grid-item">
+                        <input ondblclick="dblClick('byName')" autocomplete="off" type="text" id="cityName" name="city" class="search-box" placeholder="Insert name of city" title="required field (City Name)" >
+                        <button id="button-byName" type="submit" class="button">Search</button>    
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class='search-bar-grid-container'>
+            <div class='search-bar-coordinates search-bar-grid' id="SearchBarCoordinates" >
+                <form id="form-byCoords">
+                    <div class="search-bar-grid-item">
+                        <input ondblclick="dblClick('lat')"  type="number" id="lat" name="latitude" class="search-box" placeholder="latitude" title="required field (Latitude)">
+                        <input ondblclick="dblClick('lon')" type="number" id="lon" name="longitude" class="search-box" placeholder="longitude" title="required field (Longitude)">
+                    </div>
+                    <div class="search-bar-grid-item">
+                        <button id="button-coord" type="submit" class="button">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class='weather-grid-container main' id="offsetTop">
+            <div class='weather-grid'>
+                <div class='weather-grid-item weather-grid-item-main' title="City name + Contry">
+                    <p class="city">City:</p>
                 </div>
-            </form>
-        </div>
-    </div>
-
-    <div class='search-bar-grid-container'>
-        <div class='search-bar-coordinates search-bar-grid' id="SearchBarCoordinates" >
-            <form id="form-byCoords">
-                <div class="search-bar-grid-item">
-                    <input ondblclick="dblClick('lat')"  type="number" id="lat" name="latitude" class="search-box" placeholder="latitude" title="required field (Latitude)">
-                    <input ondblclick="dblClick('lon')" type="number" id="lon" name="longitude" class="search-box" placeholder="longitude" title="required field (Longitude)">
+                <div class='weather-grid-item weather-grid-item-main' title="Current weather">
+                    <p class="description">Weather:</p>
                 </div>
-                <div class="search-bar-grid-item">
-                    <button id="button-coord" type="submit" class="button">Search</button>
+            </div>
+        </div>
+
+        <div class='weather-grid-container secondary'>
+            <div class='weather-grid'>
+                <div class='weather-grid-item'>
+                    <p class="temperature" title="Temperature °Celsius">Temperature: - °C</p>
                 </div>
-            </form>
-        </div>
-    </div>
-
-    <div class='weather-grid-container main' id="offsetTop">
-        <div class='weather-grid'>
-            <div class='weather-grid-item weather-grid-item-main' title="City name + Contry">
-                <p class="city">City:</p>
-            </div>
-            <div class='weather-grid-item weather-grid-item-main' title="Current weather">
-                <p class="description">Weather:</p>
+                <div class='weather-grid-item' title="Perceived Temperature °Celsius">
+                    <p class="perceived">T. Perceived: - °C</p>
+                </div>
+                <div class='weather-grid-item' title="Maximum Temperature °Celsius">
+                    <p class="temperatureMax">T. Max: - °C</p>
+                </div>
+                <div class='weather-grid-item' title="Minimum Temperature °Celsius">
+                    <p class="temperatureMin">T. Min: - °C</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class='weather-grid-container secondary'>
-        <div class='weather-grid'>
-            <div class='weather-grid-item'>
-                <p class="temperature" title="Temperature °Celsius">Temperature: - °C</p>
-            </div>
-            <div class='weather-grid-item' title="Perceived Temperature °Celsius">
-                <p class="perceived">T. Perceived: - °C</p>
-            </div>
-            <div class='weather-grid-item' title="Maximum Temperature °Celsius">
-                <p class="temperatureMax">T. Max: - °C</p>
-            </div>
-            <div class='weather-grid-item' title="Minimum Temperature °Celsius">
-                <p class="temperatureMin">T. Min: - °C</p>
+        <div class='weather-grid-container secondary'>
+            <div class='weather-grid'>
+                <div class='weather-grid-item' title="Pressure (1 atm ≃ 1000hPa)">
+                    <p class="pressure">Pressure: - hPa </p>
+                </div>
+                <div class='weather-grid-item' title="Humidity (0-100%)">
+                    <p class="humidity">Humidity: - %</p>
+                </div>
+                <div class='weather-grid-item' title="Wind Speed (Meter per Second)">
+                    <p class="windSpeed">Wind speed: - m/s</p>
+                </div>
+                <div class='weather-grid-item' title="Clouds (0-100%)">
+                    <p class="clouds">Clouds: - %</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class='weather-grid-container secondary'>
-        <div class='weather-grid'>
-            <div class='weather-grid-item' title="Pressure (1 atm ≃ 1000hPa)">
-                <p class="pressure">Pressure: - hPa </p>
-            </div>
-            <div class='weather-grid-item' title="Humidity (0-100%)">
-                <p class="humidity">Humidity: - %</p>
-            </div>
-            <div class='weather-grid-item' title="Wind Speed (Meter per Second)">
-                <p class="windSpeed">Wind speed: - m/s</p>
-            </div>
-            <div class='weather-grid-item' title="Clouds (0-100%)">
-                <p class="clouds">Clouds: - %</p>
-            </div>
-        </div>
-    </div>
-
-</body>
+    </body>
 </html>
