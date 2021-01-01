@@ -6,8 +6,8 @@
         <link rel="shortcut icon" href="https://i.pinimg.com/originals/77/0b/80/770b805d5c99c7931366c2e84e88f251.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
-        <link rel="stylesheet" href="style.css">
-        <script src="index.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/index.js"></script>
     </head>
     <body>
 
@@ -30,8 +30,8 @@
             <div class='search-bar-coordinates search-bar-grid' id="SearchBarCoordinates" >
                 <form id="form-byCoords">
                     <div class="search-bar-grid-item">
-                        <input ondblclick="inputClick('lat')" onclick="inputClick('coordPlaceholder')" type="number" id="lat" name="latitude" class="search-box" placeholder="latitude" title="required field (Latitude)">
-                        <input ondblclick="inputClick('lon')" onclick="inputClick('coordPlaceholder')" type="number" id="lon" name="longitude" class="search-box" placeholder="longitude" title="required field (Longitude)">
+                        <input ondblclick="inputClick('lat')" onclick="inputClick('coordPlaceholder')" id="lat" name="latitude" class="search-box" placeholder="latitude" title="required field (Latitude)">
+                        <input ondblclick="inputClick('lon')" onclick="inputClick('coordPlaceholder')" id="lon" name="longitude" class="search-box" placeholder="longitude" title="required field (Longitude)">
                     </div>
                     <div class="search-bar-grid-item">
                         <button id="button-coord" type="submit" class="button">Search</button>
