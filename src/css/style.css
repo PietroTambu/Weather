@@ -201,7 +201,8 @@ input, button{
     transition: opacity 0.7s;
     opacity: 0.5;
 }
-
+.main,
+.secondary,
 .weather-grid-container,
 .search-bar-grid-container {
     display: flex;

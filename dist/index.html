@@ -10,28 +10,7 @@
         <script src="bundle.js"></script>
     </head>
     <body>
-        <script>
-            function inputClick(type){
-                var lat = $('#lat');
-                var lon = $('#lon');
-                var cityName = $('#cityName');
 
-                if(type === "coordPlaceholder"){
-                    lat.attr("placeholder", "latitude");
-                    lon.attr("placeholder", "longitude");
-                }else if(type === "namePlaceholder"){
-                    cityName.attr("placeholder", "Insert name of city");
-                }
-                if(type === "byName"){
-                    $('#cityName').val("");
-                }else if(type === "lon"){
-                    $('#lon').val("");
-                }else if(type === "lat"){
-                    $('#lat').val("");
-                }
-
-            }
-        </script>
         <div class="header">
             <h1>THE WEATHER</h1>
         </div>
@@ -68,10 +47,10 @@
         <div class='weather-grid-container main'>
             <div class='weather-grid'>
                 <div class='weather-grid-item weather-grid-item-main' title="City name + Contry">
-                    <p class="city">City:</p>
+                    <p id="city">City:</p>
                 </div>
                 <div class='weather-grid-item weather-grid-item-main' title="Current weather">
-                    <p class="description">Weather:</p>
+                    <p id="description">Weather:</p>
                 </div>
             </div>
         </div>
@@ -79,16 +58,16 @@
         <div class='weather-grid-container secondary'>
             <div class='weather-grid'>
                 <div class='weather-grid-item'>
-                    <p class="temperature" title="Temperature °Celsius">Temperature: - °C</p>
+                    <p id="temperature" title="Temperature °Celsius">Temperature: - °C</p>
                 </div>
                 <div class='weather-grid-item' title="Perceived Temperature °Celsius">
-                    <p class="perceived">T. Perceived: - °C</p>
+                    <p id="perceived">T. Perceived: - °C</p>
                 </div>
                 <div class='weather-grid-item' title="Maximum Temperature °Celsius">
-                    <p class="temperatureMax">T. Max: - °C</p>
+                    <p id="temperatureMax">T. Max: - °C</p>
                 </div>
                 <div class='weather-grid-item' title="Minimum Temperature °Celsius">
-                    <p class="temperatureMin">T. Min: - °C</p>
+                    <p id="temperatureMin">T. Min: - °C</p>
                 </div>
             </div>
         </div>
@@ -96,16 +75,16 @@
         <div class='weather-grid-container secondary'>
             <div class='weather-grid'>
                 <div class='weather-grid-item' title="Pressure (1 atm ≃ 1000hPa)">
-                    <p class="pressure">Pressure: - hPa </p>
+                    <p id="pressure">Pressure: - hPa </p>
                 </div>
                 <div class='weather-grid-item' title="Humidity (0-100%)">
-                    <p class="humidity">Humidity: - %</p>
+                    <p id="humidity">Humidity: - %</p>
                 </div>
                 <div class='weather-grid-item' title="Wind Speed (Meter per Second)">
-                    <p class="windSpeed">Wind speed: - m/s</p>
+                    <p id="windSpeed">Wind speed: - m/s</p>
                 </div>
                 <div class='weather-grid-item' title="Clouds (0-100%)">
-                    <p class="clouds">Clouds: - %</p>
+                    <p id="clouds">Clouds: - %</p>
                 </div>
             </div>
         </div>
