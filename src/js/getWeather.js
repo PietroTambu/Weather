@@ -1,3 +1,6 @@
+const axios = require('axios');
+const _ = require('lodash');
+
 $(document).ready(function(){
     $("#form-byName").submit(function(){
         check('byName'); 
@@ -52,7 +55,6 @@ function check(usage){
         lon.val("");
         cityName.val("");
 
-    
         $('#button-coord').html('Search');
         $('#button-byName').html('use');
         cityName.attr("placeholder", "city name");
@@ -88,45 +90,68 @@ function getWeather(usage){
         setTimeout(() => { $('#SearchBarCoordinates').css("animation", "none");}, 500);
     }else{
         if(usage === "byName"){
-            var apiCall = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + process.env.API_KEY;
+            var options = {
+                method: 'GET',
+                url: 'http://api.openweathermap.org/data/2.5/weather',
+                params: {
+                q: cityName,
+                units: 'metric',
+                appid: '84fa0ddce2495b1f04851902133c2e3b'
+                }
+            };
         }else{
-            var apiCall = 'http://api.openweathermap.org/data/2.5/weather?lat='+ lat +'&lon='+ lon +'&appid=' + process.env.API_KEY;
+            var options = {
+                method: 'GET',
+                url: 'http://api.openweathermap.org/data/2.5/weather',
+                params: {
+                    lat: lat,
+                    lon: lon,
+                    units: 'metric',
+                    appid: '84fa0ddce2495b1f04851902133c2e3b'
+                }
+            };
         }
-        $.getJSON(apiCall, weatherCallback).fail( function() { 
-            if(usage === "byName"){
-                $('#SearchBarCity').css("animation", "shake 0.5s");
-                setTimeout(() => { $('#SearchBarCity').css("animation", "none");}, 500);
-                $('#cityName').attr("placeholder","not found, retry...");
-                $('#cityName').val("");
-            }else{
-                $('#SearchBarCoordinates').css("animation", "shake 0.5s");
-                setTimeout(() => { $('#SearchBarCoordinates').css("animation", "none");}, 500);
-                $('#lat').attr("placeholder","not");
-                $('#lon').attr("placeholder","found");
-                $('#lat').val("");
-                $('#lon').val("");
+        (async () => {
+            try {
+                let response = await axios.request(options);
+                weatherCallback(response.data);
+            }catch (error) {
+                if(usage === "byName"){
+                    $('#SearchBarCity').css("animation", "shake 0.5s");
+                    setTimeout(() => { $('#SearchBarCity').css("animation", "none");}, 500);
+                    $('#cityName').attr("placeholder","not found, retry...");
+                    $('#cityName').val("");
+                }else{
+                    $('#SearchBarCoordinates').css("animation", "shake 0.5s");
+                    setTimeout(() => { $('#SearchBarCoordinates').css("animation", "none");}, 500);
+                    $('#lat').attr("placeholder","not");
+                    $('#lon').attr("placeholder","found");
+                    $('#lat').val("");
+                    $('#lon').val("");
+                }
+                console.error(error);
             }
-        });
+        })()
     }
     
     function weatherCallback(weatherData){
 
-        var cityName = weatherData.name;
-        var country = weatherData.sys.country;
-        var description = weatherData.weather[0].description;
-        var lat = parseFloat(weatherData.coord.lat);
-        var lon = parseFloat(weatherData.coord.lon);
+        var cityName = _.get(weatherData, 'name' , 'Error get city');
+        var country = _.get(weatherData, 'sys.country' , ' - ');
+        var description = _.get(weatherData, 'weather[0].description' , 'Error get weather');
+        var lat = _.get(weatherData, 'coord.lat' , '0');
+        var lon = _.get(weatherData, 'coord.lon' , '0');
 
-        var icon = weatherData.weather[0].icon;
-        var temperature = Math.round((weatherData.main.temp - 273.15) * 100) / 100;
-        var temperature_min = Math.round((weatherData.main.temp_min - 273.15) * 100) / 100;
-        var temperature_max = Math.round((weatherData.main.temp_max - 273.15) * 100) / 100;
-        var perceived_temperature = Math.round((weatherData.main.feels_like - 273.15) * 100) / 100;
+        var icon = _.get(weatherData, 'weather[0].icon' , '03n');
+        var temperature = _.get(weatherData, 'main.temp' , ' - ');
+        var temperature_min = _.get(weatherData, 'main.temp_min' , ' - ');
+        var temperature_max = _.get(weatherData, 'main.temp_max' , ' - ');
+        var perceived_temperature = _.get(weatherData, 'main.feels_like' , ' - ');
 
-        var pressure = weatherData.main.pressure;
-        var humidity = weatherData.main.humidity;
-        var wind_speed = weatherData.wind.speed;
-        var clouds = weatherData.clouds.all;
+        var pressure = _.get(weatherData, 'main.pressure' , ' - ');
+        var humidity = _.get(weatherData, 'main.humidity' , ' - ');
+        var wind_speed = _.get(weatherData, 'wind.speed' , ' - ');
+        var clouds = _.get(weatherData, 'clouds.all' , ' - ');
         
         var info = new Array("city", "description","temperature","perceived","temperatureMax","temperatureMin","pressure","humidity","windSpeed","clouds");
 
@@ -147,6 +172,7 @@ function getWeather(usage){
         }
         $('.div-icon').css('visibility', 'visible');
         $("#icon").attr( "src", "http://openweathermap.org/img/wn/" + icon + "@4x.png" );
+        $("#icon").attr( "alt", "Error load image... " );
         $('#description').append(description);
         $('#description').css('textTransform', 'capitalize');
         $('#temperature').append("Temperature: " + temperature + "°C");
@@ -163,7 +189,6 @@ function getWeather(usage){
         setTimeout(() => { 
             $('html,body').animate({scrollTop: $('#offsetTop').offset().top},'slow');
             $('html,body').animate({scrollTop: $('#offsetTop').offset().top},'slow');
-        }, 800);
-        
+        }, 800);  
    }
 }
