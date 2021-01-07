@@ -10,7 +10,28 @@
         <script src="bundle.js"></script>
     </head>
     <body>
+        <script>
+            function inputClick(type){
+                var lat = $('#lat');
+                var lon = $('#lon');
+                var cityName = $('#cityName');
 
+                if(type === "coordPlaceholder"){
+                    lat.attr("placeholder", "latitude");
+                    lon.attr("placeholder", "longitude");
+                }else if(type === "namePlaceholder"){
+                    cityName.attr("placeholder", "Insert name of city");
+                }
+                if(type === "byName"){
+                    $('#cityName').val("");
+                }else if(type === "lon"){
+                    $('#lon').val("");
+                }else if(type === "lat"){
+                    $('#lat').val("");
+                }
+
+            }
+        </script>
         <div class="header">
             <h1>THE WEATHER</h1>
         </div>

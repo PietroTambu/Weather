@@ -76,27 +76,6 @@ $(document).ready(function(){
     setTimeout(() => { $('html, body').animate({scrollTop:0}, 'slow'); }, 500);
 });
 
-function inputClick(type){
-    var lat = $('#lat');
-    var lon = $('#lon');
-    var cityName = $('#cityName');
-
-    if(type === "coordPlaceholder"){
-        lat.attr("placeholder", "latitude");
-        lon.attr("placeholder", "longitude");
-    }else if(type === "namePlaceholder"){
-        cityName.attr("placeholder", "Insert name of city");
-    }
-    if(type === "byName"){
-        $('#cityName').val("");
-    }else if(type === "lon"){
-        $('#lon').val("");
-    }else if(type === "lat"){
-        $('#lat').val("");
-    }
-
-}
-
 function check(usage){
 
     var lat = $('#lat');
@@ -173,9 +152,9 @@ function getWeather(usage){
         setTimeout(() => { $('#SearchBarCoordinates').css("animation", "none");}, 500);
     }else{
         if(usage === "byName"){
-            var apiCall = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=84fa0ddce2495b1f04851902133c2e3b';
+            var apiCall = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + process.env.API_KEY;
         }else{
-            var apiCall = 'http://api.openweathermap.org/data/2.5/weather?lat='+ lat +'&lon='+ lon +'&appid=84fa0ddce2495b1f04851902133c2e3b';
+            var apiCall = 'http://api.openweathermap.org/data/2.5/weather?lat='+ lat +'&lon='+ lon +'&appid=' + process.env.API_KEY;
         }
         $.getJSON(apiCall, weatherCallback).fail( function() { 
             if(usage === "byName"){
