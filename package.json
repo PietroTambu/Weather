@@ -1,6 +1,6 @@
 {
   "name": "weather",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Weather API",
   "private": true,
   "scripts": {
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/PietroTambu/Weather.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Pietro Tamburini",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/PietroTambu/Weather/issues"
