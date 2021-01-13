@@ -34,7 +34,7 @@ window.onload = function(){
     cityName.fadeTo("slow", 1);
     $('#SearchBarCity').css("box-shadow", "0 0 7px #ffffffab");
     $('#SearchBarCoordinates').css("box-shadow", "none");
-    $('#cityName').attr("placeholder", "City / City, country");
+    $('#cityName').attr("placeholder", "City - City, country");
     $('.div-icon').css('visibility', 'hidden');
 }
 

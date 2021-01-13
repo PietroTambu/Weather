@@ -7,7 +7,7 @@ window.inputClick = function inputClick(type){
         lat.attr("placeholder", "latitude");
         lon.attr("placeholder", "longitude");
     }else if(type === "namePlaceholder"){
-        cityName.attr("placeholder", "City / City, country");
+        cityName.attr("placeholder", "City - City, country");
     }
     if(type === "byName"){
         $('#cityName').val("");
